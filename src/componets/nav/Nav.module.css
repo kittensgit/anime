@@ -1,0 +1,13 @@
+.nav__list {
+    display: flex;
+    gap: 15px;
+    color: #807f7f;
+}
+
+.nav__item a {
+    transition: all 0.2s ease-in;
+}
+
+.nav__item a:hover {
+    color: #fff;
+}

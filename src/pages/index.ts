@@ -1,6 +1,6 @@
-import AnimeListPage from './AnimeListPage';
+import CatalogPage from './CatalogPage';
 import HomePage from './HomePage';
 import NotFoundPage from './NotFoundPage';
 import AnimeInfoPage from './AnimeInfoPage';
 
-export { AnimeListPage, HomePage, NotFoundPage, AnimeInfoPage };
+export { CatalogPage, HomePage, NotFoundPage, AnimeInfoPage };

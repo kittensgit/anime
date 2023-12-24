@@ -1,0 +1,10 @@
+.header {
+    background-color: inherit;
+    border-bottom: 1px solid #474544;
+    display: flex;
+}
+
+.header__wrap {
+    display: flex;
+    justify-content: space-between;
+}

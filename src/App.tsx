@@ -4,7 +4,7 @@ import Header from './componets/Header/Header';
 
 import {
     AnimeInfoPage,
-    AnimeListPage,
+    CatalogPage,
     HomePage,
     NotFoundPage,
 } from './pages/index';
@@ -15,8 +15,8 @@ const App = () => {
             <Header />
             <Routes>
                 <Route path="/" element={<HomePage />} />
-                <Route path="/animelist" element={<AnimeListPage />} />
-                <Route path="/animelist/:animeId" element={<AnimeInfoPage />} />
+                <Route path="/catalog" element={<CatalogPage />} />
+                <Route path="/catalog/:animeId" element={<AnimeInfoPage />} />
                 <Route path="*" element={<NotFoundPage />} />
             </Routes>
         </div>
