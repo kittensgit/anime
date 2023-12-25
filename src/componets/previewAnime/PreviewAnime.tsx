@@ -1,6 +1,7 @@
 import { FC } from 'react';
 
 import Video from '../video/Video';
+import Button from '../common/Button/Button';
 
 import styles from './PreviewAnime.module.css';
 
@@ -15,9 +16,11 @@ const PreviewAnime: FC = () => {
                         life, spending time with a girl
                     </p>
                     <Video />
-                    <div>
-                        <button>Learn more</button>
-                        <button>To watch</button>
+                    <div className={styles.buttons}>
+                        <Button to="/catalog/1">Learn more</Button>
+                        <Button className={styles.watchBtn} to="/catalog/2">
+                            To Watch
+                        </Button>
                     </div>
                 </div>
             </div>
