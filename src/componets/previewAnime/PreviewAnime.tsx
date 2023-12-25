@@ -1,7 +1,8 @@
 import { FC } from 'react';
 
 import Video from '../video/Video';
-import Button from '../common/Button/Button';
+import Button from '../common/button/Button';
+import AnimeCards from '../animeCards/AnimeCards';
 
 import styles from './PreviewAnime.module.css';
 
@@ -22,6 +23,7 @@ const PreviewAnime: FC = () => {
                             To Watch
                         </Button>
                     </div>
+                    <AnimeCards />
                 </div>
             </div>
         </div>

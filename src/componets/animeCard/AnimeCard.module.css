@@ -1,0 +1,19 @@
+.card {
+    background: #111111;
+    height: 220px;
+    width: 160px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 18px;
+}
+
+.title {
+    font-weight: 400;
+}
+
+.caption {
+    color: #474544;
+    font-size: 14px;
+}
