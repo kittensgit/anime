@@ -1,10 +1,15 @@
 .header {
-    background-color: inherit;
-    border-bottom: 1px solid #474544;
-    display: flex;
+    background-color: transparent;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 3;
 }
 
 .header__wrap {
     display: flex;
     justify-content: space-between;
+    border-bottom: 1px solid #474544;
+    padding: 20px;
 }
