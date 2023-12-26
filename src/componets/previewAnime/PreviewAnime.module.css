@@ -5,11 +5,11 @@
 .preview__content {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: end;
     min-height: 550px;
     position: relative;
     z-index: 2;
-    padding: 0 20px;
+    padding: 0 30px 100px;
 }
 
 .preview__content::before {

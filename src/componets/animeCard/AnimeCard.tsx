@@ -1,5 +1,7 @@
 import { FC } from 'react';
 
+import Button from '../common/button/Button';
+
 import img from '../../assets/img1.jpg';
 
 import styles from './AnimeCard.module.css';
@@ -25,6 +27,9 @@ const AnimeCard: FC<AnimeCardProps> = ({ genre, title, year }) => {
                 <p className={styles.caption}>
                     {year}, {genre}
                 </p>
+                <Button className={styles.btn} to="catalog/1">
+                    Learn more
+                </Button>
             </div>
         </div>
     );
