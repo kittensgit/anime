@@ -32,6 +32,12 @@
     max-width: 350px;
 }
 
+.preview__cards {
+    position: absolute;
+    bottom: -35%;
+    left: 0;
+}
+
 .buttons {
     margin-top: 20px;
     display: flex;

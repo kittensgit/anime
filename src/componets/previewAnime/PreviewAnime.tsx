@@ -16,14 +16,16 @@ const PreviewAnime: FC = () => {
                         Denji has a simple dream - to live a happy and peaceful
                         life, spending time with a girl
                     </p>
-                    <Video />
+                    {/* <Video /> */}
                     <div className={styles.buttons}>
                         <Button to="/catalog/1">Learn more</Button>
                         <Button className={styles.watchBtn} to="/catalog/2">
                             To Watch
                         </Button>
                     </div>
-                    <AnimeCards />
+                    <div className={styles.preview__cards}>
+                        <AnimeCards />
+                    </div>
                 </div>
             </div>
         </div>
