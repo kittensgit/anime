@@ -1,0 +1,17 @@
+.nav {
+    margin-bottom: 40px;
+}
+
+.navlist {
+    display: flex;
+}
+
+.item_link {
+    padding: 10px 20px;
+    border-bottom: 1px solid #434343;
+    transition: 0.3s ease-in-out;
+}
+
+.item_link:hover {
+    border-bottom: 1px solid #fff;
+}

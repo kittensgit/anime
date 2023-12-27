@@ -1,10 +1,11 @@
 import { FC } from 'react';
-import { useParams } from 'react-router-dom';
+import { Outlet, useParams } from 'react-router-dom';
 
 import { useGetAnimeByIdQuery } from '../services/AnimeService';
 
 import AnimeInfo from '../componets/animeInfo/AnimeInfo';
 import Loading from '../componets/common/loading/Loading';
+import AnimeInfoNav from '../componets/animeInfoNav/AnimeInfoNav';
 
 const AnimeInfoPage: FC = () => {
     const { animeId } = useParams();
@@ -26,6 +27,8 @@ const AnimeInfoPage: FC = () => {
             ) : (
                 <p>An error occurred while fetching data</p>
             )}
+            <AnimeInfoNav />
+            <Outlet />
         </div>
     );
 };
