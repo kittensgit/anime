@@ -1,0 +1,36 @@
+.info {
+    display: flex;
+    align-items: center;
+    padding: 100px 20px 30px;
+}
+
+.title {
+    font-size: 32px;
+}
+
+.score {
+    padding-left: 25px;
+    position: relative;
+}
+.score::after {
+    position: absolute;
+    content: '';
+    left: 0;
+    top: 1px;
+    width: 20px;
+    height: 20px;
+    background-image: url('../../assets/star.png');
+    background-size: cover;
+}
+
+.img {
+    border-radius: 15px;
+    margin-right: 40px;
+}
+
+.buttons {
+    display: flex;
+    gap: 15px;
+    color: white;
+    margin-top: 20px;
+}

@@ -37,20 +37,3 @@
     display: flex;
     gap: 10px;
 }
-
-.watchBtn {
-    background-color: #474544;
-    color: white;
-    padding-left: 40px;
-    position: relative;
-}
-
-.watchBtn:after {
-    position: absolute;
-    content: '';
-    top: 9px;
-    left: 11px;
-    width: 24px;
-    height: 24px;
-    background-image: url('../../assets/bookmark.png');
-}

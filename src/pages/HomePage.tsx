@@ -1,7 +1,6 @@
 import { FC } from 'react';
 
 import PreviewAnime from '../componets/previewAnime/PreviewAnime';
-import Header from '../componets/header/Header';
 import AnimeCards from '../componets/animeCards/AnimeCards';
 import Loading from '../componets/common/loading/Loading';
 
@@ -14,7 +13,6 @@ const HomePage: FC = () => {
 
     return (
         <div>
-            <Header />
             <PreviewAnime />
             {isLoading ? (
                 <Loading />

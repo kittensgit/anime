@@ -1,4 +1,4 @@
-import Nav from '../nav/Nav';
+import Nav from './nav/Nav';
 
 import styles from './Header.module.css';
 

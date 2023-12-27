@@ -1,8 +1,8 @@
 import { FC } from 'react';
 
-import AnimeCard from '../animeCard/AnimeCard';
-
 import { IAnime } from '../../types/anime/anime';
+
+import AnimeCard from './animeCard/AnimeCard';
 
 import styles from './AnimeCards.module.css';
 

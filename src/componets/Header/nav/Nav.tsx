@@ -1,4 +1,4 @@
-import NavActiveLink from '../common/navActiveLink/NavActiveLink';
+import NavActiveLink from '../../common/navActiveLink/NavActiveLink';
 
 import styles from './Nav.module.css';
 

@@ -25,20 +25,6 @@
     justify-content: end;
 }
 
-.back {
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: #1f1b1b;
-    transform: rotateY(180deg);
-}
-.card:hover .front {
-    transform: rotateY(180deg);
-}
-.card:hover .back {
-    transform: rotateY(360deg);
-}
-
 .front::after {
     content: '';
     position: absolute;
@@ -48,6 +34,21 @@
     height: 50%;
     background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
     z-index: 0;
+}
+
+.back {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: #1f1b1b;
+    transform: rotateY(180deg);
+}
+.card:hover .front {
+    transform: rotateY(180deg);
+}
+.card:hover .back {
+    transform: rotateY(360deg);
 }
 
 .img {

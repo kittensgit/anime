@@ -1,6 +1,6 @@
 import { FC } from 'react';
 
-import video from '../../assets/chainsaw.mp4';
+import video from '../../../assets/chainsaw.mp4';
 
 import styles from './Video.module.css';
 

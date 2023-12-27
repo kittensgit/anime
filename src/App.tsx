@@ -1,5 +1,7 @@
 import { Route, Routes } from 'react-router-dom';
 
+import Header from './componets/header/Header';
+
 import {
     AnimeInfoPage,
     CatalogPage,
@@ -10,6 +12,7 @@ import {
 const App = () => {
     return (
         <div>
+            <Header />
             <Routes>
                 <Route path="/" element={<HomePage />} />
                 <Route path="/catalog" element={<CatalogPage />} />

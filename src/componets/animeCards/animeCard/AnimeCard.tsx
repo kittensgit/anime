@@ -1,11 +1,11 @@
 import { FC } from 'react';
 
-import Button from '../common/button/Button';
+import Button from '../../common/button/Button';
 
-import { IAnimeTitle } from '../../types/anime/animeTitle';
-import { IAnime } from '../../types/anime/anime';
-import { IAnimeGenre } from '../../types/anime/animeGenre';
-import { IAnimeImage } from '../../types/anime/animeImage';
+import { IAnimeTitle } from '../../../types/anime/animeTitle';
+import { IAnime } from '../../../types/anime/anime';
+import { IAnimeGenre } from '../../../types/anime/animeGenre';
+import { IAnimeImage } from '../../../types/anime/animeImage';
 
 import styles from './AnimeCard.module.css';
 
@@ -21,7 +21,7 @@ const AnimeCard: FC<AnimeCardProps> = ({ genre, title, year, img, id }) => {
     return (
         <div className={styles.card}>
             <div className={styles.front}>
-                <img className={styles.img} src={img} alt="img" />
+                <img className={styles.img} src={img} alt={title} />
                 <h5 className={styles.title}>{title}</h5>
                 <p className={styles.caption}>
                     {year}, {genre}
