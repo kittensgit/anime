@@ -1,10 +1,13 @@
 import { FC } from 'react';
 
-import { ICharacterImage } from '../../../types/characters/characterImage';
-import { ICharacter } from '../../../types/characters/character';
-import { ICharacterData } from '../../../types/characters/characterData';
-import { IPerson } from '../../../types/characters/person';
-import { IPersonImage } from '../../../types/characters/personImage';
+import {
+    ICharacter,
+    ICharacterImage,
+    ICharacterData,
+    IPerson,
+    IPersonImage,
+    IVoiceActor,
+} from '../../../types/characters/index';
 
 import styles from './CharactersCard.module.css';
 
@@ -14,6 +17,7 @@ interface CharactersCardProps {
     role: ICharacterData['role'];
     actorName: IPerson['name'];
     actorImg: IPersonImage['jpg'];
+    language: IVoiceActor['language'];
 }
 
 const CharactersCard: FC<CharactersCardProps> = ({

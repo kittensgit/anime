@@ -2,10 +2,12 @@ import { FC } from 'react';
 
 import Button from '../../common/button/Button';
 
-import { IAnimeTitle } from '../../../types/anime/animeTitle';
-import { IAnime } from '../../../types/anime/anime';
-import { IAnimeGenre } from '../../../types/anime/animeGenre';
-import { IAnimeImage } from '../../../types/anime/animeImage';
+import {
+    IAnime,
+    IAnimeTitle,
+    IAnimeGenre,
+    IAnimeImage,
+} from '../../../types/anime/index';
 
 import styles from './AnimeCard.module.css';
 
@@ -24,13 +26,13 @@ const AnimeCard: FC<AnimeCardProps> = ({ genre, title, year, img, id }) => {
                 <img className={styles.img} src={img} alt={title} />
                 <h5 className={styles.title}>{title}</h5>
                 <p className={styles.caption}>
-                    {year}, {genre}
+                    {year ? year : '-'}, {genre}
                 </p>
             </div>
             <div className={styles.back}>
                 <h5 className={styles.title}>{title}</h5>
                 <p className={styles.caption}>
-                    {year}, {genre}
+                    {year ? year : '-'}, {genre}
                 </p>
                 <Button className={styles.btn} to={`catalog/${id}`}>
                     Learn more

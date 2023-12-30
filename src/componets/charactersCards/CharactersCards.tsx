@@ -1,6 +1,6 @@
 import { FC } from 'react';
 
-import { ICharacterData } from '../../types/characters/characterData';
+import { ICharacterData } from '../../types/characters/index';
 
 import CharactersCard from './charactersCard/CharactersCard';
 
@@ -25,6 +25,7 @@ const CharactersCards: FC<CharactersCardsProps> = ({ characterList }) => {
                         actorName={character.voice_actors[0]?.person?.name}
                         characterName={character.character.name}
                         role={character.role}
+                        language={character.voice_actors[0].language}
                     />
                 ))}
             </div>

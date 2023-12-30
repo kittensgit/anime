@@ -4,23 +4,25 @@ import PreviewAnime from '../componets/previewAnime/PreviewAnime';
 import AnimeCards from '../componets/animeCards/AnimeCards';
 import Loading from '../componets/common/loading/Loading';
 
-import { useGetFiveAnimeQuery } from '../services/AnimeService';
+import { useGetFivePopularAnimeQuery } from '../services/AnimeService';
 
 const HomePage: FC = () => {
-    const { data, isLoading, isError } = useGetFiveAnimeQuery('');
+    const { data, isLoading, isError } = useGetFivePopularAnimeQuery('');
 
     const hasDataAndNoError = data && !isError;
 
     return (
         <div>
             <PreviewAnime />
-            {isLoading ? (
-                <Loading />
-            ) : hasDataAndNoError ? (
-                <AnimeCards title="Special for you" animelist={data.data} />
-            ) : (
-                <p>An error occurred while fetching data</p>
-            )}
+            <div className="container">
+                {isLoading ? (
+                    <Loading />
+                ) : hasDataAndNoError ? (
+                    <AnimeCards title="Special for you" animelist={data.data} />
+                ) : (
+                    <p>An error occurred while fetching data</p>
+                )}
+            </div>
         </div>
     );
 };
