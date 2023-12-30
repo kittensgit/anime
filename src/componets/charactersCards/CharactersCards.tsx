@@ -25,7 +25,7 @@ const CharactersCards: FC<CharactersCardsProps> = ({ characterList }) => {
                         actorName={character.voice_actors[0]?.person?.name}
                         characterName={character.character.name}
                         role={character.role}
-                        language={character.voice_actors[0].language}
+                        language={character.voice_actors[0]?.language}
                     />
                 ))}
             </div>

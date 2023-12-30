@@ -1,0 +1,19 @@
+.title {
+    margin-bottom: 15px;
+}
+
+.list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.item {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.item_title {
+    color: #807f7f;
+    margin-right: 8px;
+}

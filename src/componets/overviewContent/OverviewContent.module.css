@@ -1,0 +1,6 @@
+.overview {
+    display: grid;
+    grid-template-columns: 20% 75%;
+    gap: 60px;
+    margin-bottom: 50px;
+}

@@ -26,6 +26,7 @@ const CharactersCard: FC<CharactersCardProps> = ({
     characterImg,
     characterName,
     role,
+    language,
 }) => {
     return (
         <div className={styles.card}>
@@ -45,7 +46,7 @@ const CharactersCard: FC<CharactersCardProps> = ({
                     alt={actorName}
                 />
                 <h5 className={styles.name}>{actorName}</h5>
-                <p className={styles.caption}>{role}</p>
+                <p className={styles.caption}>{language}</p>
             </div>
         </div>
     );

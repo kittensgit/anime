@@ -19,6 +19,7 @@ export interface IAnime {
     titles?: IAnimeTitle[];
     title_english?: string;
     title_japanese?: string;
+    type?: string;
     source?: string;
     episodes?: number;
     status?: string;
