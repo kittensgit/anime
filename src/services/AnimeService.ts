@@ -1,7 +1,8 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
-import { IAnimeApiResAll, IAnimeApiResOne } from '../types/anime/index';
-import { ICharactersApiRes } from '../types/characters/index';
+import { IAnimeApiResAll, IAnimeApiResOne } from '../types/anime';
+import { ICharactersApiRes } from '../types/characters';
+import { IStaffApiRes } from '../types/staff/staff';
 
 export const animeApi = createApi({
     reducerPath: 'animeApi',
@@ -16,6 +17,9 @@ export const animeApi = createApi({
         getCharacters: builder.query<ICharactersApiRes, string>({
             query: (animeId) => `/anime/${animeId}/characters`,
         }),
+        getStaff: builder.query<IStaffApiRes, string>({
+            query: (animeId) => `/anime/${animeId}/staff`,
+        }),
     }),
 });
 
@@ -23,4 +27,5 @@ export const {
     useGetFivePopularAnimeQuery,
     useGetAnimeByIdQuery,
     useGetCharactersQuery,
+    useGetStaffQuery,
 } = animeApi;
