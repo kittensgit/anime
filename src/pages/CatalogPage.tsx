@@ -1,7 +1,13 @@
 import { FC } from 'react';
 
-const AnimeListPage: FC = () => {
-    return <div>AnimeListPage</div>;
+import CatalogContent from '../catalogContent/CatalogContent';
+
+const CatalogPage: FC = () => {
+    return (
+        <div className="container">
+            <CatalogContent />
+        </div>
+    );
 };
 
-export default AnimeListPage;
+export default CatalogPage;

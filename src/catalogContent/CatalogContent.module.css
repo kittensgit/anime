@@ -1,0 +1,16 @@
+.catalog {
+    margin-top: 60px;
+    padding-top: 70px;
+}
+
+.catalog_top {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.catalog_wrap {
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    gap: 20px;
+}

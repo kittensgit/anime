@@ -1,0 +1,47 @@
+.filter_list {
+    display: flex;
+    flex-direction: column;
+}
+
+.filter_item {
+    display: flex;
+    flex-direction: column;
+}
+
+.filter_title {
+    padding-bottom: 10px;
+    border-bottom: 1px solid #807f7f8f;
+}
+
+.checkbox_list {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.checkbox_item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.checkbox_item input {
+    appearance: none;
+    background-color: transparent;
+    margin: 0;
+    font: inherit;
+    color: white;
+    width: 1em;
+    height: 1em;
+    border: 0.15em solid #807f7f;
+    border-radius: 0.2em;
+    transition: all 0.1s ease-in;
+}
+
+.checkbox_item input:checked {
+    border: 0.15em solid #fff;
+    background: url('../../assets/check.png') center center no-repeat;
+    background-size: cover;
+}
