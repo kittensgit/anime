@@ -9,7 +9,7 @@ const AnimeInfoNav: FC = () => {
             <nav className={styles.nav}>
                 <ul className={styles.navlist}>
                     <li className={styles.item_link}>
-                        <Link to={'overview'}>Overview</Link>
+                        <Link to={''}>Overview</Link>
                     </li>
                     <li className={styles.item_link}>
                         <Link to={'characters'}>Characters</Link>

@@ -22,7 +22,7 @@ const App = () => {
                 <Route path="/catalog/:animeId/*" element={<AnimeInfoPage />}>
                     <Route path="characters" element={<CharactersPage />} />
                     <Route path="staff" element={<StaffPage />} />
-                    <Route path="overview" element={<OverviewPage />} />
+                    <Route path="" element={<OverviewPage />} />
                 </Route>
                 <Route path="*" element={<NotFoundPage />} />
             </Routes>

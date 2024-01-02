@@ -12,15 +12,18 @@ interface StaffCardsProps {
 
 const StaffCards: FC<StaffCardsProps> = ({ stafflist }) => {
     return (
-        <div className={styles.cards}>
-            {stafflist.map((staff) => (
-                <StaffCard
-                    key={staff.person.mal_id}
-                    name={staff.person.name}
-                    positions={staff.positions}
-                    staffImg={staff.person.images.jpg}
-                />
-            ))}
+        <div>
+            <h2 className={styles.title}>Staff</h2>
+            <div className={styles.cards}>
+                {stafflist.map((staff) => (
+                    <StaffCard
+                        key={staff.person.mal_id}
+                        name={staff.person.name}
+                        positions={staff.positions}
+                        staffImg={staff.person.images.jpg}
+                    />
+                ))}
+            </div>
         </div>
     );
 };
