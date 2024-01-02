@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 import Nav from './nav/Nav';
 
 import styles from './Header.module.css';
@@ -7,7 +9,9 @@ const Header = () => {
         <div className={styles.header}>
             <div className="container">
                 <div className={styles.header__wrap}>
-                    <strong>Animos</strong>
+                    <Link to="">
+                        <strong>Animos</strong>
+                    </Link>
                     <Nav />
                 </div>
             </div>
