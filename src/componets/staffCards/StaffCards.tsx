@@ -2,6 +2,8 @@ import { FC } from 'react';
 
 import { IStaffData } from '../../types/staff/staff';
 
+import Loading from '../common/loading/Loading';
+
 import StaffCard from './staffCard/StaffCard';
 
 import styles from './StaffCards.module.css';
