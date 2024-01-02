@@ -155,3 +155,8 @@ body {
     background-image: url('./assets/check.png');
     background-size: cover;
 }
+
+.notFound {
+    padding-top: 70px;
+    text-align: center;
+}
