@@ -14,6 +14,9 @@ export const animeApi = createApi({
         getAnimeById: builder.query<IAnimeApiResOne, string>({
             query: (animeId) => `/anime/${animeId}`,
         }),
+        getAllAnime: builder.query<IAnimeApiResAll, void>({
+            query: () => '/anime',
+        }),
         getCharacters: builder.query<ICharactersApiRes, string>({
             query: (animeId) => `/anime/${animeId}/characters`,
         }),
@@ -28,4 +31,5 @@ export const {
     useGetAnimeByIdQuery,
     useGetCharactersQuery,
     useGetStaffQuery,
+    useGetAllAnimeQuery,
 } = animeApi;

@@ -1,22 +1,26 @@
 import { FC } from 'react';
 
-import styles from './CatalogContent.module.css';
+import AnimeCards from '../componets/animeCards/AnimeCards';
+
+import { IAnime } from '../types/anime';
+
 import CatalogFilter from './catalogFilter/CatalogFilter';
 
-const CatalogContent: FC = () => {
+import styles from './CatalogContent.module.css';
+
+interface CatalogContentProps {
+    animelist: IAnime[];
+}
+
+const CatalogContent: FC<CatalogContentProps> = ({ animelist }) => {
     return (
         <div className={styles.catalog}>
             <div className={styles.catalog_top}>
                 <h2>Catalog</h2>
-                <div>
-                    <select>
-                        <option>Sort by</option>
-                    </select>
-                </div>
             </div>
             <div className={styles.catalog_wrap}>
                 <CatalogFilter />
-                <div>AnimeCard</div>
+                <AnimeCards animelist={animelist} />
             </div>
         </div>
     );

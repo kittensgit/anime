@@ -1,4 +1,5 @@
 import { FC } from 'react';
+import { useLocation } from 'react-router-dom';
 
 import Button from '../../common/button/Button';
 
@@ -20,6 +21,8 @@ interface AnimeCardProps {
 }
 
 const AnimeCard: FC<AnimeCardProps> = ({ genre, title, year, img, id }) => {
+    const location = useLocation();
+
     return (
         <div className={styles.card}>
             <div className={styles.front}>
@@ -34,7 +37,14 @@ const AnimeCard: FC<AnimeCardProps> = ({ genre, title, year, img, id }) => {
                 <p className={styles.caption}>
                     {year ? year : '-'}, {genre}
                 </p>
-                <Button className={styles.btn} to={`catalog/${id}`}>
+                <Button
+                    className={styles.btn}
+                    to={
+                        location.pathname.includes('/catalog')
+                            ? `${id}`
+                            : `/catalog/${id}`
+                    }
+                >
                     Learn more
                 </Button>
             </div>
