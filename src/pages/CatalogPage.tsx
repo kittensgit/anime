@@ -1,20 +1,32 @@
 import { FC } from 'react';
 
 import CatalogContent from '../catalogContent/CatalogContent';
-import { useGetAllAnimeQuery } from '../services/AnimeService';
 import Loading from '../componets/common/loading/Loading';
 
-const CatalogPage: FC = () => {
-    const { data, isLoading, isError } = useGetAllAnimeQuery();
+import {
+    useGetAllAnimeQuery,
+    useGetAnimeGenresQuery,
+} from '../services/AnimeService';
 
-    const hasDataAndNoError = data && !isError;
+const CatalogPage: FC = () => {
+    const animelistData = useGetAllAnimeQuery();
+    const genresData = useGetAnimeGenresQuery();
+
+    const hasDataAndNoError =
+        animelistData.data &&
+        genresData.data &&
+        !animelistData.isError &&
+        !genresData.isError;
 
     return (
         <div className="container">
-            {isLoading ? (
+            {animelistData.isLoading ? (
                 <Loading />
             ) : hasDataAndNoError ? (
-                <CatalogContent animelist={data.data} />
+                <CatalogContent
+                    animelist={animelistData.data.data}
+                    genres={genresData.data.data}
+                />
             ) : (
                 <p>An error occurred while fetching data</p>
             )}

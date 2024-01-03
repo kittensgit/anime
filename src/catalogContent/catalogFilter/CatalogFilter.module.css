@@ -21,27 +21,15 @@
     padding-bottom: 20px;
 }
 
-.checkbox_item {
-    display: flex;
-    align-items: center;
-    gap: 8px;
+.button {
+    padding: 8px;
+    border-radius: 10px;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.3s ease-in;
 }
 
-.checkbox_item input {
-    appearance: none;
-    background-color: transparent;
-    margin: 0;
-    font: inherit;
-    color: white;
-    width: 1em;
-    height: 1em;
-    border: 0.15em solid #807f7f;
-    border-radius: 0.2em;
-    transition: all 0.1s ease-in;
-}
-
-.checkbox_item input:checked {
-    border: 0.15em solid #fff;
-    background: url('../../assets/check.png') center center no-repeat;
-    background-size: cover;
+.button:hover {
+    transform: scale(1.1);
 }
