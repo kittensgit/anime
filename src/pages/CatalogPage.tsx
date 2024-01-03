@@ -1,6 +1,6 @@
 import { FC } from 'react';
 
-import CatalogContent from '../catalogContent/CatalogContent';
+import CatalogContent from '../componets/catalogContent/CatalogContent';
 import Loading from '../componets/common/loading/Loading';
 
 import {

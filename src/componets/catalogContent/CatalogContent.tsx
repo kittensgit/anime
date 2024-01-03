@@ -1,9 +1,9 @@
 import { FC } from 'react';
 
-import AnimeCards from '../componets/animeCards/AnimeCards';
+import AnimeCards from '../animeCards/AnimeCards';
 
-import { IAnime } from '../types/anime';
-import { IGenre } from '../types/genres/genres';
+import { IAnime } from '../../types/anime';
+import { IGenre } from '../../types/genres/genres';
 
 import CatalogFilter from './catalogFilter/CatalogFilter';
 
