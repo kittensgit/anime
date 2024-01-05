@@ -10,7 +10,7 @@ import styles from './CatalogFilter.module.css';
 
 interface CatalogFilterProps {
     genres: IGenre[];
-    handleFilterClick: (genreId: string) => void;
+    handleFilterClick: (genreId: string, rating: string) => void;
 }
 
 const CatalogFilter: FC<CatalogFilterProps> = ({
@@ -77,7 +77,12 @@ const CatalogFilter: FC<CatalogFilterProps> = ({
             ))}
             <button
                 className={styles.button}
-                onClick={() => handleFilterClick(selectedGenres.join(','))}
+                onClick={() =>
+                    handleFilterClick(
+                        selectedGenres.join(','),
+                        selectedRatings.join(',')
+                    )
+                }
             >
                 Apply
             </button>

@@ -12,6 +12,7 @@ import { IAnime } from '../types/anime';
 
 const CatalogPage: FC = () => {
     const [genresId, setGenresId] = useState<string>('0');
+    const [rating, setRating] = useState<string>('G');
     const [currentPage, setCurrentPage] = useState<number>(1);
 
     const [allAnime, setAllAnime] = useState<IAnime[]>([]);
@@ -19,6 +20,7 @@ const CatalogPage: FC = () => {
     const animelistData = useGetAllAnimeQuery({
         genres: genresId,
         page: currentPage,
+        rating,
     });
 
     const genresData = useGetAnimeGenresQuery();
@@ -29,8 +31,9 @@ const CatalogPage: FC = () => {
         !animelistData.isError &&
         !genresData.isError;
 
-    const handleFilterClick = (genreId: string) => {
+    const handleFilterClick = (genreId: string, rating: string) => {
         setGenresId(genreId);
+        setRating(rating);
         setCurrentPage(1);
         setAllAnime([]);
     };
@@ -40,7 +43,7 @@ const CatalogPage: FC = () => {
     };
 
     useEffect(() => {
-        if (animelistData.data) {
+        if (animelistData.data && animelistData.data.data) {
             setAllAnime((prevAnime) => [
                 ...prevAnime,
                 ...animelistData.data!.data,
@@ -50,7 +53,7 @@ const CatalogPage: FC = () => {
 
     useEffect(() => {
         animelistData.refetch();
-    }, [genresId, currentPage]);
+    }, [genresId, currentPage, rating]);
 
     return (
         <div className="container">

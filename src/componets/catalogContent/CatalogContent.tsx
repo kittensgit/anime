@@ -12,7 +12,7 @@ import styles from './CatalogContent.module.css';
 interface CatalogContentProps {
     animelist: IAnime[];
     genres: IGenre[];
-    handleFilterClick: (genreId: string) => void;
+    handleFilterClick: (genreId: string, rating: string) => void;
     handleShowMoreClick: () => void;
 }
 
