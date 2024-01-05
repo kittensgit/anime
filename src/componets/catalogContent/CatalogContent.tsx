@@ -13,12 +13,14 @@ interface CatalogContentProps {
     animelist: IAnime[];
     genres: IGenre[];
     handleFilterClick: (genreId: string) => void;
+    handleShowMoreClick: () => void;
 }
 
 const CatalogContent: FC<CatalogContentProps> = ({
     animelist,
     genres,
     handleFilterClick,
+    handleShowMoreClick,
 }) => {
     return (
         <div className={styles.catalog}>
@@ -30,7 +32,15 @@ const CatalogContent: FC<CatalogContentProps> = ({
                     genres={genres}
                     handleFilterClick={handleFilterClick}
                 />
-                <AnimeCards animelist={animelist} />
+                <div className={styles.catalog_cards}>
+                    <AnimeCards animelist={animelist} />
+                    <button
+                        onClick={handleShowMoreClick}
+                        className={styles.catalog_btn}
+                    >
+                        Show more
+                    </button>
+                </div>
             </div>
         </div>
     );

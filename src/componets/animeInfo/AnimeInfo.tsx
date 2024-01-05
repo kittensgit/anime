@@ -20,7 +20,7 @@ const AnimeInfo: FC<AnimeInfoProps> = ({ title, img, score }) => {
                 <img className={styles.img} src={img} alt="lol" />
                 <div>
                     <h2 className={styles.title}>{title}</h2>
-                    <p className={styles.score}>{score}</p>
+                    {score && <p className={styles.score}>{score}</p>}
                     <div className={styles.buttons}>
                         <Button className="icon-btn watching-btn" to="/">
                             Watching

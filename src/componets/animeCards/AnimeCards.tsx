@@ -13,7 +13,7 @@ interface AnimeCardsProps {
 
 const AnimeCards: FC<AnimeCardsProps> = ({ title, animelist }) => {
     return (
-        <div className="container">
+        <div>
             {title && <h5 className={styles.title}>{title}</h5>}
             <div className={styles.cards}>
                 {animelist.map((anime) => (

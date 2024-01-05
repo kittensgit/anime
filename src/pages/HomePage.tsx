@@ -18,7 +18,7 @@ const HomePage: FC = () => {
                 {isLoading ? (
                     <Loading />
                 ) : hasDataAndNoError ? (
-                    <AnimeCards title="Special for you" animelist={data.data} />
+                    <AnimeCards title="Top 5 anime" animelist={data.data} />
                 ) : (
                     <p>An error occurred while fetching data</p>
                 )}

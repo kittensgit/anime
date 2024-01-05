@@ -8,10 +8,19 @@ import {
     useGetAnimeGenresQuery,
 } from '../services/AnimeService';
 
+import { IAnime } from '../types/anime';
+
 const CatalogPage: FC = () => {
     const [genresId, setGenresId] = useState<string>('0');
+    const [currentPage, setCurrentPage] = useState<number>(1);
 
-    const animelistData = useGetAllAnimeQuery(genresId);
+    const [allAnime, setAllAnime] = useState<IAnime[]>([]);
+
+    const animelistData = useGetAllAnimeQuery({
+        genres: genresId,
+        page: currentPage,
+    });
+
     const genresData = useGetAnimeGenresQuery();
 
     const hasDataAndNoError =
@@ -22,21 +31,37 @@ const CatalogPage: FC = () => {
 
     const handleFilterClick = (genreId: string) => {
         setGenresId(genreId);
+        setCurrentPage(1);
+        setAllAnime([]);
+    };
+
+    const handleShowMoreClick = () => {
+        setCurrentPage((prevPage) => prevPage + 1);
     };
 
     useEffect(() => {
+        if (animelistData.data) {
+            setAllAnime((prevAnime) => [
+                ...prevAnime,
+                ...animelistData.data!.data,
+            ]);
+        }
+    }, [animelistData.data]);
+
+    useEffect(() => {
         animelistData.refetch();
-    }, [genresId]);
+    }, [genresId, currentPage]);
 
     return (
         <div className="container">
-            {animelistData.isLoading || animelistData.isFetching ? (
+            {animelistData.isLoading ? (
                 <Loading />
             ) : hasDataAndNoError ? (
                 <CatalogContent
-                    animelist={animelistData.data.data}
+                    animelist={allAnime}
                     genres={genresData.data.data}
                     handleFilterClick={handleFilterClick}
+                    handleShowMoreClick={handleShowMoreClick}
                 />
             ) : (
                 <p>An error occurred while fetching data</p>

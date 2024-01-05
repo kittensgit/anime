@@ -1,6 +1,7 @@
 .catalog {
     margin-top: 60px;
     padding-top: 70px;
+    margin-bottom: 50px;
 }
 
 .catalog_top {
@@ -13,4 +14,23 @@
     display: grid;
     grid-template-columns: 1fr 5fr;
     gap: 20px;
+}
+
+.catalog_cards {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.catalog_btn {
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 10px;
+    border: none;
+    font-weight: 600;
+    margin: 0 60px;
+    transition: transform 0.3s ease-in;
+}
+.catalog_btn:hover {
+    transform: scale(1.03);
 }

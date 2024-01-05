@@ -9,8 +9,11 @@ export const animeApi = createApi({
     reducerPath: 'animeApi',
     baseQuery: fetchBaseQuery({ baseUrl: 'https://api.jikan.moe/v4/' }),
     endpoints: (builder) => ({
-        getAllAnime: builder.query<IAnimeApiResAll, string>({
-            query: (genreId) => `/anime?genres=${genreId}`,
+        getAllAnime: builder.query<
+            IAnimeApiResAll,
+            { genres: string; page: number }
+        >({
+            query: ({ genres, page }) => `/anime?genres=${genres}&page=${page}`,
         }),
         getFivePopularAnime: builder.query<IAnimeApiResAll, string>({
             query: () => '/anime?order_by=popularity&limit=6',
