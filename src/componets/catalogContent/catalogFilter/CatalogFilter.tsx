@@ -2,7 +2,7 @@ import { FC, useState } from 'react';
 
 import Checkbox from '../../common/checkbox/Checkbox';
 
-import { filter } from '../../../data';
+import { filter, ratings } from '../../../data';
 import { useCheckboxFilter } from '../../../hooks/useCheckboxFilter';
 import { IGenre } from '../../../types/genres/genres';
 
@@ -18,6 +18,7 @@ const CatalogFilter: FC<CatalogFilterProps> = ({
     handleFilterClick,
 }) => {
     const [selectedGenres, handleGenreChange] = useCheckboxFilter([]);
+    const [selectedRatings, handleRatingChange] = useCheckboxFilter([]);
     const [showAllGenres, setShowAllGenres] = useState(false);
 
     const handleViewAllClick = () => {
@@ -32,26 +33,48 @@ const CatalogFilter: FC<CatalogFilterProps> = ({
                 <li key={index} className={styles.filter_item}>
                     <h4 className={styles.filter_title}>{filterTitle}</h4>
                     <ul className={styles.checkbox_list}>
-                        {displayedGenres.map((genre) => (
-                            <Checkbox
-                                key={genre.mal_id}
-                                label={genre.name}
-                                onChange={() => handleGenreChange(genre.mal_id)}
-                                checked={selectedGenres.includes(genre.mal_id)}
-                            />
-                        ))}
-                        {!showAllGenres && (
-                            <p
-                                className={styles.caption}
-                                onClick={handleViewAllClick}
-                            >
-                                View All
-                            </p>
+                        {index === 0 ? (
+                            <>
+                                {displayedGenres.map((genre) => (
+                                    <Checkbox
+                                        key={genre.mal_id}
+                                        label={genre.name}
+                                        onChange={() =>
+                                            handleGenreChange(genre.mal_id)
+                                        }
+                                        checked={selectedGenres.includes(
+                                            genre.mal_id
+                                        )}
+                                    />
+                                ))}
+                                {!showAllGenres && (
+                                    <p
+                                        className={styles.caption}
+                                        onClick={handleViewAllClick}
+                                    >
+                                        View All
+                                    </p>
+                                )}
+                            </>
+                        ) : (
+                            <>
+                                {ratings.map((rating, index) => (
+                                    <Checkbox
+                                        key={index}
+                                        label={rating}
+                                        onChange={() =>
+                                            handleRatingChange(rating)
+                                        }
+                                        checked={selectedRatings.includes(
+                                            rating
+                                        )}
+                                    />
+                                ))}
+                            </>
                         )}
                     </ul>
                 </li>
             ))}
-
             <button
                 className={styles.button}
                 onClick={() => handleFilterClick(selectedGenres.join(','))}

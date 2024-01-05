@@ -1,9 +1,12 @@
 import { useState } from 'react';
 
-export const useCheckboxFilter = (initialItems: number[]) => {
-    const [selectedItems, setSelectedItems] = useState<number[]>(initialItems);
+type ItemType = number | string;
 
-    const handleChange = (item: number) => {
+export const useCheckboxFilter = (initialItems: ItemType[]) => {
+    const [selectedItems, setSelectedItems] =
+        useState<ItemType[]>(initialItems);
+
+    const handleChange = (item: ItemType) => {
         setSelectedItems((prevItems) =>
             prevItems.includes(item)
                 ? prevItems.filter((prevItem) => prevItem !== item)
