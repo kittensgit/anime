@@ -20,9 +20,9 @@ const App = () => {
                 <Route path="/" element={<HomePage />} />
                 <Route path="/catalog" element={<CatalogPage />} />
                 <Route path="/catalog/:animeId/*" element={<AnimeInfoPage />}>
+                    <Route path="" element={<OverviewPage />} />
                     <Route path="characters" element={<CharactersPage />} />
                     <Route path="staff" element={<StaffPage />} />
-                    <Route path="" element={<OverviewPage />} />
                 </Route>
                 <Route path="*" element={<NotFoundPage />} />
             </Routes>

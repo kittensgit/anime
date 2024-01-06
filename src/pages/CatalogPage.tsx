@@ -33,9 +33,9 @@ const CatalogPage: FC = () => {
 
     const handleFilterClick = (genreId: string, rating: string) => {
         setGenresId(genreId);
-        setRating(rating);
         setCurrentPage(1);
         setAllAnime([]);
+        setRating(rating ? rating : 'G');
     };
 
     const handleShowMoreClick = () => {

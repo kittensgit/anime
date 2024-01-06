@@ -19,7 +19,7 @@ const AnimeCards: FC<AnimeCardsProps> = ({ title, animelist }) => {
                 {animelist.map((anime) => (
                     <AnimeCard
                         key={anime.mal_id}
-                        genre={anime.genres ? anime.genres[0].name : ''}
+                        genre={anime.genres ? anime.genres[0]?.name : ''}
                         year={anime.year}
                         title={anime.title}
                         img={anime.images.jpg.image_url}
