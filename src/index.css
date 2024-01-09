@@ -127,7 +127,7 @@ body {
     position: absolute;
     content: '';
     top: 13px;
-    left: 15px;
+    left: 9px;
     width: 20px;
     height: 20px;
     background-image: url('./assets/bookmark.png');
@@ -138,7 +138,7 @@ body {
     position: absolute;
     content: '';
     top: 13px;
-    left: 13px;
+    left: 7px;
     width: 20px;
     height: 20px;
     background-image: url('./assets/eye.png');
@@ -149,7 +149,7 @@ body {
     position: absolute;
     content: '';
     top: 13px;
-    left: 15px;
+    left: 7px;
     width: 20px;
     height: 20px;
     background-image: url('./assets/check.png');

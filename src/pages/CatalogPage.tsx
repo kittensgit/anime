@@ -14,6 +14,7 @@ const CatalogPage: FC = () => {
     const [genresId, setGenresId] = useState<string>('0');
     const [rating, setRating] = useState<string>('G');
     const [currentPage, setCurrentPage] = useState<number>(1);
+    const [orderBy, setOrderBy] = useState<string>('popularity');
 
     const [allAnime, setAllAnime] = useState<IAnime[]>([]);
 
@@ -21,6 +22,7 @@ const CatalogPage: FC = () => {
         genres: genresId,
         page: currentPage,
         rating,
+        order_by: orderBy,
     });
 
     const genresData = useGetAnimeGenresQuery();
@@ -38,6 +40,14 @@ const CatalogPage: FC = () => {
         setRating(rating ? rating : 'G');
     };
 
+    const handleChangeSort = (value: string) => {
+        if (value) {
+            setOrderBy(value);
+            setCurrentPage(1);
+            setAllAnime([]);
+        }
+    };
+
     const handleShowMoreClick = () => {
         setCurrentPage((prevPage) => prevPage + 1);
     };
@@ -53,7 +63,7 @@ const CatalogPage: FC = () => {
 
     useEffect(() => {
         animelistData.refetch();
-    }, [genresId, currentPage, rating]);
+    }, [genresId, currentPage, rating, orderBy]);
 
     return (
         <div className="container">
@@ -65,6 +75,7 @@ const CatalogPage: FC = () => {
                     genres={genresData.data.data}
                     handleFilterClick={handleFilterClick}
                     handleShowMoreClick={handleShowMoreClick}
+                    handleChangeSort={handleChangeSort}
                 />
             ) : (
                 <p>An error occurred while fetching data</p>
