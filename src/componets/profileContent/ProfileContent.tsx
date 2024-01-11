@@ -7,7 +7,17 @@ import ProfileNav from './ProfileNav/ProfileNav';
 
 import styles from './ProfileContent.module.css';
 
-const ProfileContent: FC = () => {
+interface ProfileContentProps {
+    countWatched: number;
+    countToWatch: number;
+    countWatching: number;
+}
+
+const ProfileContent: FC<ProfileContentProps> = ({
+    countToWatch,
+    countWatched,
+    countWatching,
+}) => {
     return (
         <div className={styles.profile}>
             <div className={styles.profile_info}>
@@ -15,7 +25,11 @@ const ProfileContent: FC = () => {
                 <h2>Nika Posh</h2>
             </div>
             <div className={styles.profile_content}>
-                <ProfileNav />
+                <ProfileNav
+                    countToWatch={countToWatch}
+                    countWatched={countWatched}
+                    countWatching={countWatching}
+                />
                 <Outlet />
             </div>
         </div>

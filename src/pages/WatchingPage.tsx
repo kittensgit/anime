@@ -6,7 +6,6 @@ import AnimeCards from '../componets/animeCards/AnimeCards';
 
 const WatchingPage: FC = () => {
     const animelist = useAppSelector((state) => state.profile.watchingAnime);
-    console.log(animelist);
 
     return (
         <div>
