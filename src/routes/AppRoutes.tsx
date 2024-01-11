@@ -8,6 +8,10 @@ import {
     LazyOverviewPage,
     LazyCharactersPage,
     LazyStaffPage,
+    LazyProfilePage,
+    LazyToWatchPage,
+    LazyWatchedPage,
+    LazyWatchingPage,
 } from '../componets/lazy/Lazy';
 
 const AppRoutes = () => {
@@ -19,6 +23,11 @@ const AppRoutes = () => {
                 <Route path="" element={<LazyOverviewPage />} />
                 <Route path="characters" element={<LazyCharactersPage />} />
                 <Route path="staff" element={<LazyStaffPage />} />
+            </Route>
+            <Route path="/profile/*" element={<LazyProfilePage />}>
+                <Route path="" element={<LazyWatchedPage />} />
+                <Route path="watching" element={<LazyWatchingPage />} />
+                <Route path="to-watch" element={<LazyToWatchPage />} />
             </Route>
             <Route path="*" element={<LazyNotFoundPage />} />
         </Routes>

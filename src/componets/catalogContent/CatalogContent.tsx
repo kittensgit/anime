@@ -14,7 +14,6 @@ interface CatalogContentProps {
     genres: IGenre[];
     handleFilterClick: (genreId: string, rating: string) => void;
     handleShowMoreClick: () => void;
-    handleChangeSort: (value: string) => void;
 }
 
 const CatalogContent: FC<CatalogContentProps> = ({
@@ -22,17 +21,7 @@ const CatalogContent: FC<CatalogContentProps> = ({
     genres,
     handleFilterClick,
     handleShowMoreClick,
-    handleChangeSort,
 }) => {
-    const [selectedSort, setSelectedSort] = useState('');
-
-    const handleSelectChange = (
-        event: React.ChangeEvent<HTMLSelectElement>
-    ) => {
-        setSelectedSort(event.target.value);
-        handleChangeSort(event.target.value);
-    };
-
     return (
         <div className={styles.catalog}>
             <div className={styles.catalog_top}>
@@ -44,16 +33,6 @@ const CatalogContent: FC<CatalogContentProps> = ({
                     handleFilterClick={handleFilterClick}
                 />
                 <div className={styles.catalog_cards}>
-                    <select
-                        className={styles.dropdowm}
-                        value={selectedSort}
-                        onChange={handleSelectChange}
-                    >
-                        <option value="">Sort by</option>
-                        <option value="title">Title</option>
-                        <option value="popularity">Popularity</option>
-                    </select>
-
                     <AnimeCards animelist={animelist} />
                     <button
                         onClick={handleShowMoreClick}

@@ -1,0 +1,39 @@
+.nav {
+    margin-bottom: 40px;
+}
+
+.navlist {
+    display: flex;
+}
+
+.item_link {
+    border-bottom: 1px solid #434343;
+    padding: 10px 20px;
+    transition: 0.3s ease-in-out;
+    padding-left: 40px;
+    position: relative;
+}
+
+.item_link::after {
+    position: absolute;
+    content: '';
+    top: 13px;
+    left: 15px;
+    width: 20px;
+    height: 20px;
+    background-size: cover;
+}
+
+.item_link:nth-child(1)::after {
+    background-image: url('../../../assets/check.png');
+}
+.item_link:nth-child(2)::after {
+    background-image: url('../../../assets/eye.png');
+}
+.item_link:nth-child(3)::after {
+    background-image: url('../../../assets/bookmark.png');
+}
+
+.item_link:hover {
+    border-bottom: 1px solid #fff;
+}

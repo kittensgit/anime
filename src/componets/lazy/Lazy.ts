@@ -10,4 +10,8 @@ export const LazyCharactersPage = lazy(
     () => import('../../pages/CharactersPage')
 );
 export const LazyStaffPage = lazy(() => import('../../pages/StaffPage'));
+export const LazyProfilePage = lazy(() => import('../../pages/ProfilePage'));
+export const LazyWatchedPage = lazy(() => import('../../pages/WatchedPage'));
+export const LazyWatchingPage = lazy(() => import('../../pages/WatchingPage'));
+export const LazyToWatchPage = lazy(() => import('../../pages/ToWatchPage'));
 export const LazyNotFoundPage = lazy(() => import('../../pages/NotFoundPage'));

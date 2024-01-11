@@ -5,7 +5,7 @@ import { useGetAnimeByIdQuery } from '../services/AnimeService';
 
 import AnimeInfo from '../componets/animeInfo/AnimeInfo';
 import Loading from '../componets/common/loading/Loading';
-import AnimeInfoNav from '../componets/animeInfoNav/AnimeInfoNav';
+import AnimeInfoNav from '../componets/animeInfo/animeInfoNav/AnimeInfoNav';
 
 const AnimeInfoPage: FC = () => {
     const { animeId } = useParams();
