@@ -116,46 +116,6 @@ body {
     margin: 0 auto;
 }
 
-.icon-btn {
-    background-color: #474544;
-    color: white;
-    padding-left: 40px;
-    position: relative;
-}
-
-.to-watch-btn:after {
-    position: absolute;
-    content: '';
-    top: 13px;
-    left: 9px;
-    width: 20px;
-    height: 20px;
-    background-image: url('./assets/bookmark.png');
-    background-size: cover;
-}
-
-.watching-btn::after {
-    position: absolute;
-    content: '';
-    top: 13px;
-    left: 7px;
-    width: 20px;
-    height: 20px;
-    background-image: url('./assets/eye.png');
-    background-size: cover;
-}
-
-.watched-btn::after {
-    position: absolute;
-    content: '';
-    top: 13px;
-    left: 7px;
-    width: 20px;
-    height: 20px;
-    background-image: url('./assets/check.png');
-    background-size: cover;
-}
-
 .notFound {
     padding-top: 70px;
     text-align: center;

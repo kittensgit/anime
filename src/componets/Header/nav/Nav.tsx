@@ -12,6 +12,9 @@ const Nav = () => {
                 <li className={styles.nav__item}>
                     <NavActiveLink to="/catalog">Catalog</NavActiveLink>
                 </li>
+                <li className={styles.nav__item}>
+                    <NavActiveLink to="/profile">Profile</NavActiveLink>
+                </li>
             </ul>
         </nav>
     );

@@ -19,9 +19,7 @@ const PreviewAnime: FC = () => {
                     <Video />
                     <div className={styles.buttons}>
                         <Button to="/catalog/44511">Learn more</Button>
-                        <Button className="icon-btn to-watch-btn" to="/">
-                            To Watch
-                        </Button>
+                        <button className={styles.icon_btn}>To Watch</button>
                     </div>
                 </div>
             </div>

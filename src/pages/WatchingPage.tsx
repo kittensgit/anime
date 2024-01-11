@@ -1,7 +1,18 @@
-import React from 'react';
+import { FC } from 'react';
 
-const WatchingPage = () => {
-    return <div>WatchingPage</div>;
+import { useAppSelector } from '../hooks/useAppSelector';
+
+import AnimeCards from '../componets/animeCards/AnimeCards';
+
+const WatchingPage: FC = () => {
+    const animelist = useAppSelector((state) => state.profile.watchingAnime);
+    console.log(animelist);
+
+    return (
+        <div>
+            <AnimeCards animelist={animelist} />
+        </div>
+    );
 };
 
 export default WatchingPage;
