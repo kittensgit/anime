@@ -19,13 +19,28 @@ const profileSlice = createSlice({
     initialState,
     reducers: {
         addWatched: (state, action: PayloadAction<IAnime>) => {
-            state.watchedAnime = [...state.watchedAnime, action.payload];
+            const animeAlreadyExists = state.watchedAnime.some(
+                (anime) => anime.mal_id === action.payload.mal_id
+            );
+            if (!animeAlreadyExists) {
+                state.watchedAnime = [...state.watchedAnime, action.payload];
+            }
         },
         addWatching: (state, action: PayloadAction<IAnime>) => {
-            state.watchingAnime = [...state.watchingAnime, action.payload];
+            const animeAlreadyExists = state.watchingAnime.some(
+                (anime) => anime.mal_id === action.payload.mal_id
+            );
+            if (!animeAlreadyExists) {
+                state.watchingAnime = [...state.watchingAnime, action.payload];
+            }
         },
         addToWatch: (state, action: PayloadAction<IAnime>) => {
-            state.toWatchAnime = [...state.toWatchAnime, action.payload];
+            const animeAlreadyExists = state.toWatchAnime.some(
+                (anime) => anime.mal_id === action.payload.mal_id
+            );
+            if (!animeAlreadyExists) {
+                state.toWatchAnime = [...state.toWatchAnime, action.payload];
+            }
         },
     },
 });
