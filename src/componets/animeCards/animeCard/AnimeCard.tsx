@@ -10,6 +10,8 @@ import {
     IAnimeImage,
 } from '../../../types/anime/index';
 
+import deleteIcon from '../../../assets/remove.png';
+
 import styles from './AnimeCard.module.css';
 
 interface AnimeCardProps {
@@ -62,12 +64,12 @@ const AnimeCard: FC<AnimeCardProps> = ({
                     Learn more
                 </Button>
                 {onDelete && (
-                    <button
-                        className={styles.deleteButton}
+                    <img
+                        className={styles.remove}
                         onClick={handleDelete}
-                    >
-                        Delete
-                    </button>
+                        src={deleteIcon}
+                        alt="delete"
+                    />
                 )}
             </div>
         </div>
