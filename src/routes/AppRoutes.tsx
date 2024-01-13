@@ -28,6 +28,7 @@ const AppRoutes = () => {
                 <Route path="" element={<LazyWatchedPage />} />
                 <Route path="watching" element={<LazyWatchingPage />} />
                 <Route path="to-watch" element={<LazyToWatchPage />} />
+                <Route path="*" element={<LazyNotFoundPage />} />
             </Route>
             <Route path="*" element={<LazyNotFoundPage />} />
         </Routes>

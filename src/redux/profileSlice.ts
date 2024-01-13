@@ -26,6 +26,11 @@ const profileSlice = createSlice({
                 state.watchedAnime = [...state.watchedAnime, action.payload];
             }
         },
+        removeWatched: (state, action: PayloadAction<number>) => {
+            state.watchedAnime = state.watchedAnime.filter(
+                (anime) => anime.mal_id !== action.payload
+            );
+        },
         addWatching: (state, action: PayloadAction<IAnime>) => {
             const animeAlreadyExists = state.watchingAnime.some(
                 (anime) => anime.mal_id === action.payload.mal_id
@@ -33,6 +38,11 @@ const profileSlice = createSlice({
             if (!animeAlreadyExists) {
                 state.watchingAnime = [...state.watchingAnime, action.payload];
             }
+        },
+        removeWatching: (state, action: PayloadAction<number>) => {
+            state.watchingAnime = state.watchingAnime.filter(
+                (anime) => anime.mal_id !== action.payload
+            );
         },
         addToWatch: (state, action: PayloadAction<IAnime>) => {
             const animeAlreadyExists = state.toWatchAnime.some(
@@ -42,9 +52,21 @@ const profileSlice = createSlice({
                 state.toWatchAnime = [...state.toWatchAnime, action.payload];
             }
         },
+        removeToWatch: (state, action: PayloadAction<number>) => {
+            state.toWatchAnime = state.toWatchAnime.filter(
+                (anime) => anime.mal_id !== action.payload
+            );
+        },
     },
 });
 
-export const { addWatched, addToWatch, addWatching } = profileSlice.actions;
+export const {
+    addWatched,
+    addToWatch,
+    addWatching,
+    removeWatched,
+    removeToWatch,
+    removeWatching,
+} = profileSlice.actions;
 
 export const profileReducer = profileSlice.reducer;

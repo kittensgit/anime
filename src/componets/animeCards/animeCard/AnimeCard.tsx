@@ -18,10 +18,24 @@ interface AnimeCardProps {
     genre: IAnimeGenre['name'];
     img: IAnimeImage['image_url'];
     id: IAnime['mal_id'];
+    onDelete?: (id: number) => void;
 }
 
-const AnimeCard: FC<AnimeCardProps> = ({ genre, title, year, img, id }) => {
+const AnimeCard: FC<AnimeCardProps> = ({
+    genre,
+    title,
+    year,
+    img,
+    id,
+    onDelete,
+}) => {
     const location = useLocation();
+
+    const handleDelete = () => {
+        if (onDelete) {
+            onDelete(id);
+        }
+    };
 
     return (
         <div className={styles.card}>
@@ -47,6 +61,14 @@ const AnimeCard: FC<AnimeCardProps> = ({ genre, title, year, img, id }) => {
                 >
                     Learn more
                 </Button>
+                {onDelete && (
+                    <button
+                        className={styles.deleteButton}
+                        onClick={handleDelete}
+                    >
+                        Delete
+                    </button>
+                )}
             </div>
         </div>
     );
