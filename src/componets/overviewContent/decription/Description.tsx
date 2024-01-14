@@ -1,6 +1,6 @@
 import { FC } from 'react';
 
-import { IAnime } from '../../../types/anime';
+import { IAnime } from 'types/anime';
 
 import styles from './Description.module.css';
 

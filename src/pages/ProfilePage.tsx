@@ -1,8 +1,8 @@
 import { FC } from 'react';
 
-import ProfileContent from '../componets/profileContent/ProfileContent';
+import ProfileContent from 'componets/profileContent/ProfileContent';
 
-import { useAppSelector } from '../hooks/useAppSelector';
+import { useAppSelector } from 'hooks/useAppSelector';
 
 const ProfilePage: FC = () => {
     const countToWatch = useAppSelector((state) => state.profile.toWatchAnime);

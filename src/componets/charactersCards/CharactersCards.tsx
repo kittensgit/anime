@@ -1,6 +1,6 @@
 import { FC } from 'react';
 
-import { ICharacterData } from '../../types/characters/index';
+import { ICharacterData } from 'types/characters/index';
 
 import CharactersCard from './charactersCard/CharactersCard';
 

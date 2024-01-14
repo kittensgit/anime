@@ -1,6 +1,6 @@
 import { FC } from 'react';
 
-import { IStaffData } from '../../types/staff/staff';
+import { IStaffData } from 'types/staff/staff';
 
 import StaffCard from './staffCard/StaffCard';
 

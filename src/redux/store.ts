@@ -1,6 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit';
 
-import { animeApi } from '../services/AnimeService';
+import { animeApi } from 'services/AnimeService';
 
 import { profileReducer } from './profileSlice';
 

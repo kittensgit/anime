@@ -1,10 +1,10 @@
 import { FC } from 'react';
 import { useParams } from 'react-router-dom';
 
-import OverviewContent from '../componets/overviewContent/OverviewContent';
-import Loading from '../componets/common/loading/Loading';
+import OverviewContent from 'componets/overviewContent/OverviewContent';
+import Loading from 'componets/common/loading/Loading';
 
-import { useGetAnimeByIdQuery } from '../services/AnimeService';
+import { useGetAnimeByIdQuery } from 'services/AnimeService';
 
 const OverviewPage: FC = () => {
     const { animeId } = useParams();

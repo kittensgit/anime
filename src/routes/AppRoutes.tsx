@@ -12,7 +12,7 @@ import {
     LazyToWatchPage,
     LazyWatchedPage,
     LazyWatchingPage,
-} from '../componets/lazy/Lazy';
+} from 'componets/lazy/Lazy';
 
 const AppRoutes = () => {
     return (

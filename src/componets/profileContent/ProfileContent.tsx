@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import { Outlet } from 'react-router-dom';
 
-import img from '../../assets/spotic.jpg';
+import img from 'assets/spotic.jpg';
 
 import ProfileNav from './ProfileNav/ProfileNav';
 

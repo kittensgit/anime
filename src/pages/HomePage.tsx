@@ -1,10 +1,10 @@
 import { FC } from 'react';
 
-import PreviewAnime from '../componets/previewAnime/PreviewAnime';
-import AnimeCards from '../componets/animeCards/AnimeCards';
-import Loading from '../componets/common/loading/Loading';
+import Loading from 'componets/common/loading/Loading';
+import PreviewAnime from 'componets/previewAnime/PreviewAnime';
+import AnimeCards from 'componets/animeCards/AnimeCards';
 
-import { useGetFivePopularAnimeQuery } from '../services/AnimeService';
+import { useGetFivePopularAnimeQuery } from 'services/AnimeService';
 
 const HomePage: FC = () => {
     const { data, isLoading, isError } = useGetFivePopularAnimeQuery('');

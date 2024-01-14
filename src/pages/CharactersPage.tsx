@@ -1,10 +1,10 @@
 import { FC } from 'react';
 import { useParams } from 'react-router-dom';
 
-import Loading from '../componets/common/loading/Loading';
-import CharactersCards from '../componets/charactersCards/CharactersCards';
+import Loading from 'componets/common/loading/Loading';
+import CharactersCards from 'componets/charactersCards/CharactersCards';
 
-import { useGetCharactersQuery } from '../services/AnimeService';
+import { useGetCharactersQuery } from 'services/AnimeService';
 
 const CharactersPage: FC = () => {
     const { animeId } = useParams();

@@ -1,10 +1,10 @@
 import { FC } from 'react';
 import { useParams } from 'react-router-dom';
 
-import StaffCards from '../componets/staffCards/StaffCards';
-import Loading from '../componets/common/loading/Loading';
+import StaffCards from 'componets/staffCards/StaffCards';
+import Loading from 'componets/common/loading/Loading';
 
-import { useGetStaffQuery } from '../services/AnimeService';
+import { useGetStaffQuery } from 'services/AnimeService';
 
 const StaffPage: FC = () => {
     const { animeId } = useParams();

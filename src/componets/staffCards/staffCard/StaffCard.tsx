@@ -1,7 +1,7 @@
 import { FC } from 'react';
 
-import { IPerson, IPersonImage } from '../../../types/characters';
-import { IStaffData } from '../../../types/staff/staff';
+import { IPerson, IPersonImage } from 'types/characters';
+import { IStaffData } from 'types/staff/staff';
 
 import styles from './StaffCard.module.css';
 

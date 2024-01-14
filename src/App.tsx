@@ -1,9 +1,9 @@
 import { Suspense } from 'react';
 
-import Header from './componets/header/Header';
-import Loading from './componets/common/loading/Loading';
+import Header from 'componets/header/Header';
+import Loading from 'componets/common/loading/Loading';
 
-import AppRoutes from './routes/AppRoutes';
+import AppRoutes from 'routes/AppRoutes';
 
 const App = () => {
     return (

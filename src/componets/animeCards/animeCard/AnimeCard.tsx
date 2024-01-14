@@ -1,16 +1,16 @@
 import { FC } from 'react';
 import { useLocation } from 'react-router-dom';
 
-import Button from '../../common/button/Button';
-
 import {
     IAnime,
     IAnimeTitle,
     IAnimeGenre,
     IAnimeImage,
-} from '../../../types/anime/index';
+} from 'types/anime/index';
 
-import deleteIcon from '../../../assets/remove.png';
+import deleteIcon from 'assets/remove.png';
+
+import Button from '../../common/button/Button';
 
 import styles from './AnimeCard.module.css';
 

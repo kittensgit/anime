@@ -1,13 +1,13 @@
 import { FC } from 'react';
 import { Outlet, useParams } from 'react-router-dom';
 
-import { useGetAnimeByIdQuery } from '../services/AnimeService';
+import AnimeInfo from 'componets/animeInfo/AnimeInfo';
+import Loading from 'componets/common/loading/Loading';
+import AnimeInfoNav from 'componets/animeInfo/animeInfoNav/AnimeInfoNav';
 
-import AnimeInfo from '../componets/animeInfo/AnimeInfo';
-import Loading from '../componets/common/loading/Loading';
-import AnimeInfoNav from '../componets/animeInfo/animeInfoNav/AnimeInfoNav';
+import { useGetAnimeByIdQuery } from 'services/AnimeService';
+import { useAppDispatch } from 'hooks/useAppDispatch';
 
-import { useAppDispatch } from '../hooks/useAppDispatch';
 import { addToWatch, addWatched, addWatching } from '../redux/profileSlice';
 
 const AnimeInfoPage: FC = () => {

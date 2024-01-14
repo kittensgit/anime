@@ -1,6 +1,6 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 
-import { IAnime } from '../types/anime';
+import { IAnime } from 'types/anime';
 
 interface IInitialState {
     watchedAnime: IAnime[];

@@ -1,8 +1,8 @@
 import { FC } from 'react';
 
-import { IAnime } from '../../../types/anime';
+import { IAnime } from 'types/anime';
 
-import { normalizeDate } from '../../../helpers/normalizeDate';
+import { normalizeDate } from 'helpers/normalizeDate';
 
 import styles from './Details.module.css';
 

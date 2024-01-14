@@ -1,9 +1,9 @@
-import { FC, useState } from 'react';
+import { FC } from 'react';
+
+import { IAnime } from 'types/anime';
+import { IGenre } from 'types/genres/genres';
 
 import AnimeCards from '../animeCards/AnimeCards';
-
-import { IAnime } from '../../types/anime';
-import { IGenre } from '../../types/genres/genres';
 
 import CatalogFilter from './catalogFilter/CatalogFilter';
 

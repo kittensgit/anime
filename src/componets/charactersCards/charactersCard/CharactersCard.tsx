@@ -7,7 +7,7 @@ import {
     IPerson,
     IPersonImage,
     IVoiceActor,
-} from '../../../types/characters/index';
+} from 'types/characters/index';
 
 import styles from './CharactersCard.module.css';
 

@@ -1,14 +1,14 @@
 import { FC, useEffect, useState } from 'react';
 
-import CatalogContent from '../componets/catalogContent/CatalogContent';
-import Loading from '../componets/common/loading/Loading';
+import CatalogContent from 'componets/catalogContent/CatalogContent';
+import Loading from 'componets/common/loading/Loading';
 
 import {
     useGetAllAnimeQuery,
     useGetAnimeGenresQuery,
-} from '../services/AnimeService';
+} from 'services/AnimeService';
 
-import { IAnime } from '../types/anime';
+import { IAnime } from 'types/anime';
 
 const CatalogPage: FC = () => {
     const [genresId, setGenresId] = useState<string>('0');

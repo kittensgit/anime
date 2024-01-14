@@ -1,9 +1,10 @@
 import { FC } from 'react';
 
-import AnimeCards from '../componets/animeCards/AnimeCards';
+import AnimeCards from 'componets/animeCards/AnimeCards';
 
-import { useAppSelector } from '../hooks/useAppSelector';
-import { useAppDispatch } from '../hooks/useAppDispatch';
+import { useAppSelector } from 'hooks/useAppSelector';
+import { useAppDispatch } from 'hooks/useAppDispatch';
+
 import { removeWatching } from '../redux/profileSlice';
 
 const WatchingPage: FC = () => {

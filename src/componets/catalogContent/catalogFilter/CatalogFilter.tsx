@@ -1,10 +1,10 @@
 import { FC, useState } from 'react';
 
-import Checkbox from '../../common/checkbox/Checkbox';
+import { filter, ratings } from 'data';
+import { useCheckboxFilter } from 'hooks/useCheckboxFilter';
+import { IGenre } from 'types/genres/genres';
 
-import { filter, ratings } from '../../../data';
-import { useCheckboxFilter } from '../../../hooks/useCheckboxFilter';
-import { IGenre } from '../../../types/genres/genres';
+import Checkbox from '../../common/checkbox/Checkbox';
 
 import styles from './CatalogFilter.module.css';
 
