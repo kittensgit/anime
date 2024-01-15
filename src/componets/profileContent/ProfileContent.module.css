@@ -18,6 +18,28 @@
     background-size: cover;
 }
 
+.btn {
+    background-color: transparent;
+    color: #807f7f;
+    border: none;
+    font-size: 17px;
+    font-weight: 700;
+    padding-right: 30px;
+    cursor: pointer;
+    position: relative;
+}
+
+.btn::after {
+    position: absolute;
+    content: '';
+    top: 0;
+    right: 0;
+    width: 20px;
+    height: 20px;
+    background-image: url('assets/logout.png');
+    background-size: cover;
+}
+
 .profile_category {
     display: grid;
     grid-template-columns: repeat(3, 1fr);

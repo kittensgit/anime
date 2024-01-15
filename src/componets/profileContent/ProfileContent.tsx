@@ -26,8 +26,12 @@ const ProfileContent: FC<ProfileContentProps> = ({
         <div className={styles.profile}>
             <div className={styles.profile_info}>
                 <img className={styles.ava} src={img} alt="img" />
-                <h2>{email}</h2>
-                <button onClick={handleClick}>log out</button>
+                <div>
+                    <h2>{email}</h2>
+                    <button className={styles.btn} onClick={handleClick}>
+                        Log out
+                    </button>
+                </div>
             </div>
             <div className={styles.profile_content}>
                 <ProfileNav
