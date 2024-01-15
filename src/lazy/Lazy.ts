@@ -11,3 +11,5 @@ export const LazyWatchedPage = lazy(() => import('pages/WatchedPage'));
 export const LazyWatchingPage = lazy(() => import('pages/WatchingPage'));
 export const LazyToWatchPage = lazy(() => import('pages/ToWatchPage'));
 export const LazyNotFoundPage = lazy(() => import('pages/NotFoundPage'));
+export const LazyLoginPage = lazy(() => import('pages/LoginPage'));
+export const LazySignUpPage = lazy(() => import('pages/SignUpPage'));

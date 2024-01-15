@@ -12,7 +12,9 @@ import {
     LazyToWatchPage,
     LazyWatchedPage,
     LazyWatchingPage,
-} from 'componets/lazy/Lazy';
+    LazyLoginPage,
+    LazySignUpPage,
+} from 'lazy/Lazy';
 
 const AppRoutes = () => {
     return (
@@ -30,6 +32,8 @@ const AppRoutes = () => {
                 <Route path="to-watch" element={<LazyToWatchPage />} />
                 <Route path="*" element={<LazyNotFoundPage />} />
             </Route>
+            <Route path="/login" element={<LazyLoginPage />} />
+            <Route path="/sign-up" element={<LazySignUpPage />} />
             <Route path="*" element={<LazyNotFoundPage />} />
         </Routes>
     );

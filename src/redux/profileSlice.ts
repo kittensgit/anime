@@ -6,18 +6,34 @@ interface IInitialState {
     watchedAnime: IAnime[];
     watchingAnime: IAnime[];
     toWatchAnime: IAnime[];
+    email: string;
+    id: string;
+    token: string;
 }
 
 const initialState: IInitialState = {
     watchedAnime: [],
     watchingAnime: [],
     toWatchAnime: [],
+    email: '',
+    id: '',
+    token: '',
 };
 
 const profileSlice = createSlice({
     name: 'profile',
     initialState,
     reducers: {
+        setUser: (state, action) => {
+            state.email = action.payload.email;
+            state.id = action.payload.id;
+            state.token = action.payload.token;
+        },
+        removeUser: (state) => {
+            state.email = '';
+            state.id = '';
+            state.token = '';
+        },
         addWatched: (state, action: PayloadAction<IAnime>) => {
             const animeAlreadyExists = state.watchedAnime.some(
                 (anime) => anime.mal_id === action.payload.mal_id
@@ -67,6 +83,8 @@ export const {
     removeWatched,
     removeToWatch,
     removeWatching,
+    setUser,
+    removeUser,
 } = profileSlice.actions;
 
 export const profileReducer = profileSlice.reducer;
