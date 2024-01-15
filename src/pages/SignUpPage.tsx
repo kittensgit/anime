@@ -28,7 +28,7 @@ const SignUpPage: FC = () => {
             .catch(console.error);
     };
     return (
-        <div className="container" style={{ marginTop: '60px' }}>
+        <div className="container">
             <SignUp handleClick={handleSignUp} />
         </div>
     );

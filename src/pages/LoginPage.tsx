@@ -28,7 +28,7 @@ const LoginPage: FC = () => {
             .catch(console.error);
     };
     return (
-        <div className="container" style={{ marginTop: '60px' }}>
+        <div className="container">
             <Login handleClick={handleLogin} />
         </div>
     );

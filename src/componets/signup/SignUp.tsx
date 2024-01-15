@@ -3,16 +3,20 @@ import { Link } from 'react-router-dom';
 
 import Form from 'componets/common/form/Form';
 
+import styles from './SignUp.module.css';
+
 interface SignUpProps {
     handleClick: (email: string, password: string) => void;
 }
 
 const SignUp: FC<SignUpProps> = ({ handleClick }) => {
     return (
-        <div>
+        <div className={styles.signup}>
             <h2>Sign Up</h2>
-            <Form title="sign up" handleClick={handleClick} />
-            <Link to={'/login'}>Have you already an acount? Log in.</Link>
+            <Form title="Sign Up" handleClick={handleClick} />
+            <Link className={styles.link} to={'/login'}>
+                Already have an account? <span>Log in</span>
+            </Link>
         </div>
     );
 };
