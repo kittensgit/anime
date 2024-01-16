@@ -1,11 +1,16 @@
-import { useEffect, useState } from 'react';
+import { FC, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import Nav from './nav/Nav';
 
 import styles from './Header.module.css';
 
-const Header = () => {
+interface HeaderProps {
+    isAuth: boolean;
+    username: string;
+}
+
+const Header: FC<HeaderProps> = ({ isAuth, username }) => {
     const [isScrolled, setIsScrolled] = useState(false);
 
     useEffect(() => {
@@ -32,7 +37,7 @@ const Header = () => {
                     <Link to="">
                         <strong>Animos</strong>
                     </Link>
-                    <Nav />
+                    <Nav isAuth={isAuth} username={username} />
                 </div>
             </div>
         </div>

@@ -1,8 +1,15 @@
+import { FC } from 'react';
+
 import NavActiveLink from '../../common/navActiveLink/NavActiveLink';
 
 import styles from './Nav.module.css';
 
-const Nav = () => {
+interface NavProps {
+    isAuth: boolean;
+    username: string;
+}
+
+const Nav: FC<NavProps> = ({ isAuth, username }) => {
     return (
         <nav>
             <ul className={styles.nav__list}>
@@ -13,7 +20,9 @@ const Nav = () => {
                     <NavActiveLink to="/catalog">Catalog</NavActiveLink>
                 </li>
                 <li className={styles.nav__item}>
-                    <NavActiveLink to="/profile">Profile</NavActiveLink>
+                    <NavActiveLink to="/profile">
+                        {isAuth ? username : 'Profile'}
+                    </NavActiveLink>
                 </li>
             </ul>
         </nav>

@@ -49,7 +49,7 @@
 }
 
 .avatar_container:hover .avatar_image {
-    filter: brightness(0.8); /* Применение эффекта затемнения при наведении */
+    filter: brightness(0.8);
 }
 
 .plus {
@@ -64,5 +64,5 @@
 }
 
 .avatar_container:hover .plus {
-    opacity: 1; /* Появление плюса при наведении */
+    opacity: 1;
 }
