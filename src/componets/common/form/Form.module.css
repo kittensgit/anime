@@ -28,3 +28,41 @@
     border: none;
     font-weight: 700;
 }
+
+.avatar_container {
+    margin-top: 20px;
+    align-self: center;
+    overflow: hidden;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    cursor: pointer;
+    position: relative;
+}
+
+.avatar_image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    transition: filter 0.3s ease-in-out;
+}
+
+.avatar_container:hover .avatar_image {
+    filter: brightness(0.8); /* Применение эффекта затемнения при наведении */
+}
+
+.plus {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 24px;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.avatar_container:hover .plus {
+    opacity: 1; /* Появление плюса при наведении */
+}

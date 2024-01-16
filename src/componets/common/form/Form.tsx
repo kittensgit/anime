@@ -1,5 +1,7 @@
 import { FC, useState } from 'react';
 
+import img from 'assets/ava.jpg';
+
 import styles from './Form.module.css';
 
 interface FormProps {
@@ -17,6 +19,14 @@ const Form: FC<FormProps> = ({ title, isSignUp, handleClick }) => {
         <div className={styles.form}>
             {isSignUp && (
                 <>
+                    <div className={styles.avatar_container}>
+                        <img
+                            className={styles.avatar_image}
+                            src={img}
+                            alt="Avatar"
+                        />
+                        <div className={styles.plus}>+</div>
+                    </div>
                     <label>Username</label>
                     <input
                         value={username}
