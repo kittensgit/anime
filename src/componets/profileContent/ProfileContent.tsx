@@ -11,7 +11,7 @@ interface ProfileContentProps {
     countWatched: number;
     countToWatch: number;
     countWatching: number;
-    email: string;
+    username: string;
     handleClick: () => void;
 }
 
@@ -19,7 +19,7 @@ const ProfileContent: FC<ProfileContentProps> = ({
     countToWatch,
     countWatched,
     countWatching,
-    email,
+    username,
     handleClick,
 }) => {
     return (
@@ -27,7 +27,7 @@ const ProfileContent: FC<ProfileContentProps> = ({
             <div className={styles.profile_info}>
                 <img className={styles.ava} src={img} alt="img" />
                 <div>
-                    <h2>{email}</h2>
+                    <h2>{username}</h2>
                     <button className={styles.btn} onClick={handleClick}>
                         Log out
                     </button>

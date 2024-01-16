@@ -1,6 +1,10 @@
 import { FC } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { createUserWithEmailAndPassword, getAuth } from 'firebase/auth';
+import {
+    createUserWithEmailAndPassword,
+    getAuth,
+    updateProfile,
+} from 'firebase/auth';
 
 import SignUp from 'componets/signup/SignUp';
 
@@ -12,17 +16,24 @@ const SignUpPage: FC = () => {
     const navigate = useNavigate();
     const dispatch = useAppDispatch();
 
-    const handleSignUp = (email: string, password: string) => {
+    const handleSignUp = (
+        email: string,
+        password: string,
+        username: string
+    ) => {
         const auth = getAuth();
         createUserWithEmailAndPassword(auth, email, password)
             .then(({ user }) => {
+                updateProfile(user, { displayName: username });
                 dispatch(
                     setUser({
                         email: user.email,
                         id: user.uid,
                         token: user.refreshToken,
+                        username,
                     })
                 );
+
                 navigate('/profile');
             })
             .catch(console.error);

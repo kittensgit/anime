@@ -21,6 +21,7 @@ const LoginPage: FC = () => {
                         email: user.email,
                         id: user.uid,
                         token: user.refreshToken,
+                        username: user.displayName,
                     })
                 );
                 navigate('/profile');
