@@ -8,10 +8,10 @@ import AppRoutes from 'routes/AppRoutes';
 import { useAuth } from 'hooks/useAuth';
 
 const App = () => {
-    const { isAuth, username } = useAuth();
+    const { isAuth, photo } = useAuth();
     return (
         <div>
-            <Header isAuth={isAuth} username={username} />
+            <Header isAuth={isAuth} photo={photo} />
             <Suspense fallback={<Loading />}>
                 <AppRoutes />
             </Suspense>

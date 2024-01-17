@@ -65,8 +65,6 @@ const SignUpPage: FC = () => {
                 );
 
                 navigate('/profile');
-            } else {
-                console.error('Download URL is not available.');
             }
         } catch (error) {
             console.error(error);

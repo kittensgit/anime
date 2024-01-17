@@ -2,6 +2,7 @@
     display: flex;
     gap: 15px;
     color: #807f7f;
+    align-items: center;
 }
 
 .nav__item a {
@@ -10,4 +11,12 @@
 
 .nav__item a:hover {
     color: #fff;
+}
+
+.ava {
+    background-color: #807f7f;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    object-fit: cover;
 }
