@@ -18,7 +18,7 @@ const ProfilePage: FC = () => {
         (state) => state.profile.watchingAnime
     );
 
-    const { isAuth, username } = useAuth();
+    const { isAuth, username, photo } = useAuth();
 
     const handleLogOut = () => {
         dispatch(removeUser());
@@ -28,6 +28,7 @@ const ProfilePage: FC = () => {
         <div className="container">
             {isAuth ? (
                 <ProfileContent
+                    photo={photo}
                     username={username}
                     countToWatch={countToWatch.length}
                     countWatched={countWatched.length}

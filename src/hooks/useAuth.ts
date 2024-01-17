@@ -1,8 +1,8 @@
 import { useAppSelector } from './useAppSelector';
 
 export const useAuth = () => {
-    const { email, id, token, username } = useAppSelector(
-        (state) => state.profile
+    const { email, id, token, username, photo } = useAppSelector(
+        (state) => state.profile.user
     );
 
     return {
@@ -11,5 +11,6 @@ export const useAuth = () => {
         id,
         token,
         username,
+        photo,
     };
 };

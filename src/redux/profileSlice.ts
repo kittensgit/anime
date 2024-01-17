@@ -1,25 +1,27 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 
 import { IAnime } from 'types/anime';
+import { IUser } from 'types/user/user';
 
 interface IInitialState {
     watchedAnime: IAnime[];
     watchingAnime: IAnime[];
     toWatchAnime: IAnime[];
-    email: string;
-    id: string;
-    token: string;
-    username: string;
+    user: IUser;
 }
 
 const initialState: IInitialState = {
     watchedAnime: [],
     watchingAnime: [],
     toWatchAnime: [],
-    email: '',
-    id: '',
-    token: '',
-    username: '',
+    user: {
+        email: '',
+        id: '',
+        password: '',
+        photo: '',
+        token: '',
+        username: '',
+    },
 };
 
 const profileSlice = createSlice({
@@ -27,16 +29,19 @@ const profileSlice = createSlice({
     initialState,
     reducers: {
         setUser: (state, action) => {
-            state.email = action.payload.email;
-            state.id = action.payload.id;
-            state.token = action.payload.token;
-            state.username = action.payload.username;
+            state.user.email = action.payload.email;
+            state.user.id = action.payload.id;
+            state.user.token = action.payload.token;
+            state.user.username = action.payload.username;
+            state.user.photo = action.payload.photo;
         },
         removeUser: (state) => {
-            state.email = '';
-            state.id = '';
-            state.token = '';
-            state.username = '';
+            state.user.email = '';
+            state.user.id = '';
+            state.user.token = '';
+            state.user.username = '';
+            state.user.password = '';
+            state.user.photo = '';
         },
         addWatched: (state, action: PayloadAction<IAnime>) => {
             const animeAlreadyExists = state.watchedAnime.some(

@@ -6,7 +6,12 @@ import Form from 'componets/common/form/Form';
 import styles from './SignUp.module.css';
 
 interface SignUpProps {
-    handleClick: (email: string, password: string, username: string) => void;
+    handleClick: (
+        email: string,
+        password: string,
+        username: string,
+        photo: File | null
+    ) => void;
 }
 
 const SignUp: FC<SignUpProps> = ({ handleClick }) => {

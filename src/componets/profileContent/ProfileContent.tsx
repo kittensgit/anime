@@ -1,8 +1,6 @@
 import { FC } from 'react';
 import { Outlet } from 'react-router-dom';
 
-import img from 'assets/spotic.jpg';
-
 import ProfileNav from './ProfileNav/ProfileNav';
 
 import styles from './ProfileContent.module.css';
@@ -12,6 +10,7 @@ interface ProfileContentProps {
     countToWatch: number;
     countWatching: number;
     username: string;
+    photo: string;
     handleClick: () => void;
 }
 
@@ -20,12 +19,13 @@ const ProfileContent: FC<ProfileContentProps> = ({
     countWatched,
     countWatching,
     username,
+    photo,
     handleClick,
 }) => {
     return (
         <div className={styles.profile}>
             <div className={styles.profile_info}>
-                <img className={styles.ava} src={img} alt="img" />
+                <img className={styles.ava} src={photo} alt="img" />
                 <div>
                     <h2>{username}</h2>
                     <button className={styles.btn} onClick={handleClick}>
