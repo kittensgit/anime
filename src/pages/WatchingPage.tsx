@@ -2,13 +2,13 @@ import { FC } from 'react';
 
 import AnimeCards from 'componets/animeCards/AnimeCards';
 
-import { useAppSelector } from 'hooks/useAppSelector';
 import { useAppDispatch } from 'hooks/useAppDispatch';
+import useGetAnimeFromFirebase from 'hooks/useGetAnimeListFromFirebase';
 
 import { removeWatching } from '../redux/profileSlice';
 
 const WatchingPage: FC = () => {
-    const animelist = useAppSelector((state) => state.profile.watchingAnime);
+    const wacthingAnimeList = useGetAnimeFromFirebase('watching');
     const dispatch = useAppDispatch();
 
     const handleDeleteAnime = (id: number) => {
@@ -17,7 +17,10 @@ const WatchingPage: FC = () => {
 
     return (
         <div>
-            <AnimeCards animelist={animelist} onDelete={handleDeleteAnime} />
+            <AnimeCards
+                animelist={wacthingAnimeList}
+                onDelete={handleDeleteAnime}
+            />
         </div>
     );
 };

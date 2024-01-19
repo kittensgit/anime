@@ -14,7 +14,7 @@ const AnimeInfoPage: FC = () => {
     const { data, isLoading, isError } = useGetAnimeByIdQuery(animeId!);
     const hasDataAndNoError = data && !isError;
 
-    const handleWatched = useFirebaseAnimelist('watchedlist', data?.data);
+    const handleWatched = useFirebaseAnimelist('watched', data?.data);
     const handleWatching = useFirebaseAnimelist('watching', data?.data);
     const handleToWatch = useFirebaseAnimelist('towatch', data?.data);
 

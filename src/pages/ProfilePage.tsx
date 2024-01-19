@@ -3,7 +3,7 @@ import { Navigate } from 'react-router-dom';
 
 import ProfileContent from 'componets/profileContent/ProfileContent';
 
-import { useAppSelector } from 'hooks/useAppSelector';
+import useGetAnimeFromFirebase from 'hooks/useGetAnimeListFromFirebase';
 import { useAppDispatch } from 'hooks/useAppDispatch';
 import { useAuth } from 'hooks/useAuth';
 
@@ -12,11 +12,9 @@ import { removeUser } from '../redux/profileSlice';
 const ProfilePage: FC = () => {
     const dispatch = useAppDispatch();
 
-    const countToWatch = useAppSelector((state) => state.profile.toWatchAnime);
-    const countWatched = useAppSelector((state) => state.profile.watchedAnime);
-    const countWatching = useAppSelector(
-        (state) => state.profile.watchingAnime
-    );
+    const countWatched = useGetAnimeFromFirebase('watched').length;
+    const countWatching = useGetAnimeFromFirebase('watching').length;
+    const countToWatch = useGetAnimeFromFirebase('towatch').length;
 
     const { isAuth, username, photo } = useAuth();
 
@@ -30,9 +28,9 @@ const ProfilePage: FC = () => {
                 <ProfileContent
                     photo={photo}
                     username={username}
-                    countToWatch={countToWatch.length}
-                    countWatched={countWatched.length}
-                    countWatching={countWatching.length}
+                    countToWatch={countToWatch}
+                    countWatched={countWatched}
+                    countWatching={countWatching}
                     handleClick={handleLogOut}
                 />
             ) : (
