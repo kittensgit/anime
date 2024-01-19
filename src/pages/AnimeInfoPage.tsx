@@ -1,48 +1,22 @@
 import { FC } from 'react';
-import { Outlet, useNavigate, useParams } from 'react-router-dom';
+import { Outlet, useParams } from 'react-router-dom';
 
 import AnimeInfo from 'componets/animeInfo/AnimeInfo';
 import Loading from 'componets/common/loading/Loading';
 import AnimeInfoNav from 'componets/animeInfo/animeInfoNav/AnimeInfoNav';
 
 import { useGetAnimeByIdQuery } from 'services/AnimeService';
-import { useAppDispatch } from 'hooks/useAppDispatch';
-import { useAuth } from 'hooks/useAuth';
-
-import { addToWatch, addWatched, addWatching } from '../redux/profileSlice';
+import { useFirebaseAnimelist } from 'hooks/useFirebaseAnimeList';
 
 const AnimeInfoPage: FC = () => {
     const { animeId } = useParams();
-    const dispatch = useAppDispatch();
-    const navigate = useNavigate();
 
     const { data, isLoading, isError } = useGetAnimeByIdQuery(animeId!);
-
-    const { isAuth } = useAuth();
-
     const hasDataAndNoError = data && !isError;
 
-    const handleWatched = () => {
-        if (hasDataAndNoError && isAuth) {
-            dispatch(addWatched(data.data));
-        } else if (!isAuth) {
-            navigate('/login');
-        }
-    };
-    const handleWatching = () => {
-        if (hasDataAndNoError && isAuth) {
-            dispatch(addWatching(data.data));
-        } else if (!isAuth) {
-            navigate('/login');
-        }
-    };
-    const handleToWatch = () => {
-        if (hasDataAndNoError && isAuth) {
-            dispatch(addToWatch(data.data));
-        } else if (!isAuth) {
-            navigate('/login');
-        }
-    };
+    const handleWatched = useFirebaseAnimelist('watchedlist', data?.data);
+    const handleWatching = useFirebaseAnimelist('watching', data?.data);
+    const handleToWatch = useFirebaseAnimelist('towatch', data?.data);
 
     return (
         <div>
