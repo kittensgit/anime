@@ -6,6 +6,7 @@ import Loading from 'componets/common/loading/Loading';
 import AppRoutes from 'routes/AppRoutes';
 
 import { useAuth } from 'hooks/useAuth';
+import Footer from 'componets/footer/Footer';
 
 const App = () => {
     const { isAuth, photo } = useAuth();
@@ -15,6 +16,7 @@ const App = () => {
             <Suspense fallback={<Loading />}>
                 <AppRoutes />
             </Suspense>
+            <Footer />
         </div>
     );
 };

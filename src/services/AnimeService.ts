@@ -17,7 +17,7 @@ export const animeApi = createApi({
                 `/anime?genres=${genres}&page=${page}&rating=${rating}`,
         }),
         getFivePopularAnime: builder.query<IAnimeApiResAll, string>({
-            query: () => 'top/anime?limit=6',
+            query: () => 'top/anime?limit=5',
         }),
         getAnimeById: builder.query<IAnimeApiResOne, string>({
             query: (animeId) => `/anime/${animeId}`,

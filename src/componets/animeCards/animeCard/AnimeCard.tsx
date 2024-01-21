@@ -8,8 +8,6 @@ import {
     IAnimeImage,
 } from 'types/anime/index';
 
-import deleteIcon from 'assets/remove.png';
-
 import Button from '../../common/button/Button';
 
 import styles from './AnimeCard.module.css';
@@ -20,24 +18,10 @@ interface AnimeCardProps {
     genre: IAnimeGenre['name'];
     img: IAnimeImage['image_url'];
     id: IAnime['mal_id'];
-    onDelete?: (id: number) => void;
 }
 
-const AnimeCard: FC<AnimeCardProps> = ({
-    genre,
-    title,
-    year,
-    img,
-    id,
-    onDelete,
-}) => {
+const AnimeCard: FC<AnimeCardProps> = ({ genre, title, year, img, id }) => {
     const location = useLocation();
-
-    const handleDelete = () => {
-        if (onDelete) {
-            onDelete(id);
-        }
-    };
 
     return (
         <div className={styles.card}>
@@ -63,14 +47,6 @@ const AnimeCard: FC<AnimeCardProps> = ({
                 >
                     Learn more
                 </Button>
-                {onDelete && (
-                    <img
-                        className={styles.remove}
-                        onClick={handleDelete}
-                        src={deleteIcon}
-                        alt="delete"
-                    />
-                )}
             </div>
         </div>
     );

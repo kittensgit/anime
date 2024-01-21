@@ -9,10 +9,9 @@ import styles from './AnimeCards.module.css';
 interface AnimeCardsProps {
     title?: string;
     animelist: IAnime[];
-    onDelete?: (id: number) => void;
 }
 
-const AnimeCards: FC<AnimeCardsProps> = ({ title, animelist, onDelete }) => {
+const AnimeCards: FC<AnimeCardsProps> = ({ title, animelist }) => {
     return (
         <div>
             {title && <h5 className={styles.title}>{title}</h5>}
@@ -25,7 +24,6 @@ const AnimeCards: FC<AnimeCardsProps> = ({ title, animelist, onDelete }) => {
                         title={anime.title}
                         img={anime.images.jpg.image_url}
                         id={anime.mal_id}
-                        onDelete={onDelete}
                     />
                 ))}
             </div>
