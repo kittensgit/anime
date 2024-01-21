@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 
 import Loading from 'componets/common/loading/Loading';
 import CharactersCards from 'componets/charactersCards/CharactersCards';
+import Error from 'componets/common/error/Error';
 
 import { useGetCharactersQuery } from 'services/AnimeService';
 
@@ -20,7 +21,7 @@ const CharactersPage: FC = () => {
             ) : hasDataAndNoError ? (
                 <CharactersCards characterList={data.data} />
             ) : (
-                <p>An error occurred while fetching data</p>
+                <Error />
             )}
         </div>
     );

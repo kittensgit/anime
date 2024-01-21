@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 
 import OverviewContent from 'componets/overviewContent/OverviewContent';
 import Loading from 'componets/common/loading/Loading';
+import Error from 'componets/common/error/Error';
 
 import { useGetAnimeByIdQuery } from 'services/AnimeService';
 
@@ -20,7 +21,7 @@ const OverviewPage: FC = () => {
             ) : hasDataAndNoError ? (
                 <OverviewContent anime={data.data} />
             ) : (
-                <p>An error occurred while fetching data</p>
+                <Error />
             )}
         </div>
     );

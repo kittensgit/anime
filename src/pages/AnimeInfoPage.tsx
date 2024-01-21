@@ -4,6 +4,7 @@ import { Outlet, useParams } from 'react-router-dom';
 import AnimeInfo from 'componets/animeInfo/AnimeInfo';
 import Loading from 'componets/common/loading/Loading';
 import AnimeInfoNav from 'componets/animeInfo/animeInfoNav/AnimeInfoNav';
+import Error from 'componets/common/error/Error';
 
 import { useGetAnimeByIdQuery } from 'services/AnimeService';
 import { useFirebaseAnimelist } from 'hooks/useFirebaseAnimeList';
@@ -23,17 +24,19 @@ const AnimeInfoPage: FC = () => {
             {isLoading ? (
                 <Loading />
             ) : hasDataAndNoError ? (
-                <AnimeInfo
-                    anime={data.data}
-                    handleWatched={handleWatched}
-                    handleWatching={handleWatching}
-                    handleToWatch={handleToWatch}
-                />
+                <>
+                    <AnimeInfo
+                        anime={data.data}
+                        handleWatched={handleWatched}
+                        handleWatching={handleWatching}
+                        handleToWatch={handleToWatch}
+                    />
+                    <AnimeInfoNav />
+                    <Outlet />
+                </>
             ) : (
-                <p>An error occurred while fetching data</p>
+                <Error />
             )}
-            <AnimeInfoNav />
-            <Outlet />
         </div>
     );
 };

@@ -2,6 +2,7 @@ import { FC, useEffect, useState } from 'react';
 
 import CatalogContent from 'componets/catalogContent/CatalogContent';
 import Loading from 'componets/common/loading/Loading';
+import Error from 'componets/common/error/Error';
 
 import {
     useGetAllAnimeQuery,
@@ -67,7 +68,7 @@ const CatalogPage: FC = () => {
                     handleShowMoreClick={handleShowMoreClick}
                 />
             ) : (
-                <p>An error occurred while fetching data</p>
+                <Error />
             )}
         </div>
     );

@@ -1,5 +1,6 @@
 import { FC } from 'react';
 
+import Error from 'componets/common/error/Error';
 import Loading from 'componets/common/loading/Loading';
 import PreviewAnime from 'componets/previewAnime/PreviewAnime';
 import AnimeCards from 'componets/animeCards/AnimeCards';
@@ -20,7 +21,7 @@ const HomePage: FC = () => {
                 ) : hasDataAndNoError ? (
                     <AnimeCards title="Top 5 anime" animelist={data.data} />
                 ) : (
-                    <p>An error occurred while fetching data</p>
+                    <Error />
                 )}
             </div>
         </div>

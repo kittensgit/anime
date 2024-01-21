@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 
 import StaffCards from 'componets/staffCards/StaffCards';
 import Loading from 'componets/common/loading/Loading';
+import Error from 'componets/common/error/Error';
 
 import { useGetStaffQuery } from 'services/AnimeService';
 
@@ -20,7 +21,7 @@ const StaffPage: FC = () => {
             ) : hasDataAndNoError ? (
                 <StaffCards stafflist={data.data} />
             ) : (
-                <p>An error occurred while fetching data</p>
+                <Error />
             )}
         </div>
     );
