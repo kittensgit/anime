@@ -30,10 +30,8 @@ const LoginPage: FC = () => {
             .catch(console.error);
     };
     return (
-        <div>
-            <div className="container">
-                <Login handleClick={handleLogin} />
-            </div>
+        <div className="container">
+            <Login handleClick={handleLogin} />
         </div>
     );
 };
