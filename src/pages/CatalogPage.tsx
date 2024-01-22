@@ -58,9 +58,7 @@ const CatalogPage: FC = () => {
 
     return (
         <div className="container">
-            {animelistData.isLoading ? (
-                <Loading />
-            ) : hasDataAndNoError ? (
+            {hasDataAndNoError ? (
                 <CatalogContent
                     animelist={allAnime}
                     genres={genresData.data.data}

@@ -29,7 +29,7 @@ const Header: FC<HeaderProps> = ({ isAuth, photo }) => {
     }, []);
 
     return (
-        <div className={styles.header}>
+        <header className={styles.header}>
             <div className="container">
                 <div
                     className={`${styles.header__wrap} ${
@@ -42,7 +42,7 @@ const Header: FC<HeaderProps> = ({ isAuth, photo }) => {
                     <Nav isAuth={isAuth} photo={photo} />
                 </div>
             </div>
-        </div>
+        </header>
     );
 };
 
