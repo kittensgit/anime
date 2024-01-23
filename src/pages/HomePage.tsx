@@ -13,7 +13,7 @@ const HomePage: FC = () => {
     const hasDataAndNoError = data && !isError;
 
     return (
-        <div>
+        <div className="home-wrap">
             <PreviewAnime />
             <div className="container">
                 {isLoading ? (

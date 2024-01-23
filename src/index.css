@@ -129,6 +129,10 @@ body {
     margin: 0 auto;
 }
 
+.home-wrap {
+    width: 100%;
+}
+
 .notFound {
     padding-top: 70px;
     text-align: center;

@@ -4,6 +4,8 @@ import { filter, ratings } from 'data';
 import { useCheckboxFilter } from 'hooks/useCheckboxFilter';
 import { IGenre } from 'types/genres/genres';
 
+import viewAllImg from 'assets/arrow-bottom.png';
+
 import Checkbox from '../../common/checkbox/Checkbox';
 
 import styles from './CatalogFilter.module.css';
@@ -47,13 +49,17 @@ const CatalogFilter: FC<CatalogFilterProps> = ({
                                         )}
                                     />
                                 ))}
+
                                 {!showAllGenres && (
-                                    <p
-                                        className={styles.caption}
+                                    <div
+                                        className={styles.view_all}
                                         onClick={handleViewAllClick}
                                     >
-                                        View All
-                                    </p>
+                                        <p className={styles.caption}>
+                                            View All
+                                        </p>
+                                        <img src={viewAllImg} alt="arrow" />
+                                    </div>
                                 )}
                             </>
                         ) : (

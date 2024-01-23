@@ -34,22 +34,22 @@
     transform: scale(1.1);
 }
 
+.view_all {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .caption {
     display: flex;
     justify-content: center;
     color: #807f7f;
     cursor: pointer;
-    position: relative;
     align-items: center;
 }
 
-.caption::after {
-    position: absolute;
-    content: '';
-    top: 2px;
-    right: 46px;
+.view_all img {
     width: 20px;
     height: 20px;
-    background-image: url('../../../assets/arrow-bottom.png');
-    background-size: cover;
+    cursor: pointer;
 }
