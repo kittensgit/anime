@@ -17,3 +17,9 @@
     color: #807f7f;
     margin-right: 8px;
 }
+
+@media (max-width: 580px) {
+    .item {
+        grid-template-columns: 0.5fr 1fr;
+    }
+}

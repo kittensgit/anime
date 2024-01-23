@@ -21,3 +21,9 @@
         padding: 0 20px;
     }
 }
+
+@media (max-width: 580px) {
+    .navlist {
+        justify-content: center;
+    }
+}
