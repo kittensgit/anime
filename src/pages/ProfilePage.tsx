@@ -23,19 +23,21 @@ const ProfilePage: FC = () => {
     };
 
     return (
-        <div className="container">
-            {isAuth ? (
-                <ProfileContent
-                    photo={photo}
-                    username={username}
-                    countToWatch={countToWatch}
-                    countWatched={countWatched}
-                    countWatching={countWatching}
-                    handleClick={handleLogOut}
-                />
-            ) : (
-                <Navigate replace to="/login" />
-            )}
+        <div className="profile-wrap">
+            <div className="container">
+                {isAuth ? (
+                    <ProfileContent
+                        photo={photo}
+                        username={username}
+                        countToWatch={countToWatch}
+                        countWatched={countWatched}
+                        countWatching={countWatching}
+                        handleClick={handleLogOut}
+                    />
+                ) : (
+                    <Navigate replace to="/login" />
+                )}
+            </div>
         </div>
     );
 };
