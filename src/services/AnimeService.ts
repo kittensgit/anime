@@ -4,6 +4,7 @@ import { IAnimeApiResAll, IAnimeApiResOne } from 'types/anime';
 import { ICharactersApiRes } from 'types/characters';
 import { IStaffApiRes } from 'types/staff/staff';
 import { IGenreApiRes } from 'types/genres/genres';
+import { ITopCharactersApiData } from 'types/characters/topCharacters';
 
 export const animeApi = createApi({
     reducerPath: 'animeApi',
@@ -18,6 +19,9 @@ export const animeApi = createApi({
         }),
         getFivePopularAnime: builder.query<IAnimeApiResAll, string>({
             query: () => 'top/anime?limit=5',
+        }),
+        getFivePopularCharacters: builder.query<ITopCharactersApiData, string>({
+            query: () => 'top/characters?limit=5',
         }),
         getAnimeById: builder.query<IAnimeApiResOne, string>({
             query: (animeId) => `/anime/${animeId}`,
@@ -36,6 +40,7 @@ export const animeApi = createApi({
 
 export const {
     useGetFivePopularAnimeQuery,
+    useGetFivePopularCharactersQuery,
     useGetAnimeByIdQuery,
     useGetCharactersQuery,
     useGetStaffQuery,
