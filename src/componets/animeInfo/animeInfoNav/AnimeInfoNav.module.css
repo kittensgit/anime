@@ -15,3 +15,9 @@
 .item_link:hover {
     border-bottom: 1px solid #fff;
 }
+
+@media (max-width: 1000px) {
+    .nav {
+        padding: 0 20px;
+    }
+}

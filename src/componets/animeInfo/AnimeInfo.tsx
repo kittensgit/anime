@@ -25,7 +25,7 @@ const AnimeInfo: FC<AnimeInfoProps> = ({
                     src={anime.images.jpg.image_url}
                     alt={anime.title}
                 />
-                <div>
+                <div className={styles.info_wrap}>
                     <h2 className={styles.title}>{anime.title}</h2>
                     {anime.score && (
                         <p className={styles.score}>{anime.score}</p>

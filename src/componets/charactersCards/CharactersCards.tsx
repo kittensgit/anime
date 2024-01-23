@@ -12,7 +12,7 @@ interface CharactersCardsProps {
 
 const CharactersCards: FC<CharactersCardsProps> = ({ characterList }) => {
     return (
-        <div>
+        <div className={styles.characters}>
             <h3>Anime Characters</h3>
             <div className={styles.cards}>
                 {characterList.map((character) => (
