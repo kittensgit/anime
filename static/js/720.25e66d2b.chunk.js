@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkanime=self.webpackChunkanime||[]).push([[720],{720:(e,a,n)=>{n.r(a),n.d(a,{default:()=>c});var s=n(184);const c=()=>(0,s.jsx)("div",{className:"container",children:(0,s.jsx)("h2",{className:"notFound",children:"Not Found Page"})})}}]);
+//# sourceMappingURL=720.25e66d2b.chunk.js.map
