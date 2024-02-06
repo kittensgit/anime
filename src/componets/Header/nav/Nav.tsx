@@ -16,7 +16,7 @@ const Nav: FC<NavProps> = ({ isAuth, photo }) => {
         <nav>
             <ul className={styles.nav__list}>
                 <li className={styles.nav__item}>
-                    <NavActiveLink to="/">Home</NavActiveLink>
+                    <NavActiveLink to="/anime">Home</NavActiveLink>
                 </li>
                 <li className={styles.nav__item}>
                     <NavActiveLink to="/catalog">Catalog</NavActiveLink>

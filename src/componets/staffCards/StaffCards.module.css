@@ -13,3 +13,9 @@
     margin-top: 10px;
     margin-bottom: 30px;
 }
+
+@media (max-width: 420px) {
+    .cards {
+        gap: 15px;
+    }
+}

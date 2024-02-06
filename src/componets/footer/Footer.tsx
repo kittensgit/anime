@@ -13,7 +13,7 @@ const Footer: FC = () => {
         <div className="container">
             <div className={styles.footer}>
                 <div>
-                    <Link to="">
+                    <Link to="/anime">
                         <strong>Animos.com</strong>
                     </Link>
                 </div>

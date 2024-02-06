@@ -6,7 +6,7 @@ import styles from './Video.module.css';
 
 const Video: FC = () => {
     return (
-        <video className={styles.video} autoPlay muted loop>
+        <video className={styles.video} autoPlay muted loop playsInline>
             <source src={video} type="video/mp4" />
         </video>
     );

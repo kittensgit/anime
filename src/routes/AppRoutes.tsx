@@ -19,7 +19,7 @@ import {
 const AppRoutes = () => {
     return (
         <Routes>
-            <Route path="/" element={<LazyHomePage />} />
+            <Route path="/anime" element={<LazyHomePage />} />
             <Route path="/catalog" element={<LazyCatalogPage />} />
             <Route path="/catalog/:animeId/*" element={<LazyAnimeInfoPage />}>
                 <Route path="" element={<LazyOverviewPage />} />

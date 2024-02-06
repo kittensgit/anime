@@ -36,7 +36,7 @@ const Header: FC<HeaderProps> = ({ isAuth, photo }) => {
                         isScrolled ? styles.scrolled : ''
                     }`}
                 >
-                    <Link to="">
+                    <Link to="/anime">
                         <strong>Animos</strong>
                     </Link>
                     <Nav isAuth={isAuth} photo={photo} />
