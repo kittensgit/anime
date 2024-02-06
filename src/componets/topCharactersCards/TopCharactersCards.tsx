@@ -20,7 +20,10 @@ const TopCharactersCards: FC<TopCharactersCardsProps> = ({
             <h5 className={styles.title}>{title}</h5>
             <div className={styles.cards}>
                 {charactersList.map((character) => (
-                    <TopCharacterCard character={character} />
+                    <TopCharacterCard
+                        key={character.mal_id}
+                        character={character}
+                    />
                 ))}
             </div>
         </div>
